@@ -1,5 +1,4 @@
 ---
-
 title: "Transfer Digital Credentials Securely - General Requirements"
 abbrev: "tigress-general-requirements"
 category: info
