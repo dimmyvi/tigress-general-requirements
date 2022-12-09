@@ -18,8 +18,8 @@ venue:
 #  type: Working Group
 #  mail: WG@example.com
 #  arch: https://example.com/WG
-  github: "dimmyvi/tigress-requirements"
-  latest: "https://datatracker.ietf.org/doc/draft-tigress-requirements/"
+  github: "dimmyvi/tigress-general-requirements"
+  latest: "https://datatracker.ietf.org/doc/draft-tigress-general-requirements/"
 
 author:
  -
@@ -37,12 +37,11 @@ author:
     name: Alex Pelletier
     organization: Apple Inc
     email: a_pelletier@apple.com
--
+ -
     ins: B Lassey
     name: Brad Lassey
     organization: Alphabet Inc
     email: lassey@google.com
-
 
 normative:
   Tigress-00:
@@ -141,9 +140,8 @@ sequenceDiagram
 
 # Assumptions
 
-- User may not have the ability to revoke a credential that a Provisioning Partner has issued
-- User may not have the ability to create new digital keys without Provisioning Partner interaction
-- Provisioning Partner may not allow for two users to use the same credential / cryptographic keys.
+- Original credential information (with cryptographic key material) MUST NOT be sent or shared. Instead, sender SHALL be transferring its approval token for Receiver to acquire new credential information.
+- Provisioning Partner SHALL NOT allow for two users to use the same credential / cryptographic keys.
 - Security: Communication between Sender / Receiver and Provisioning Partner SHOULD be trusted.
 - The choice of intermediary SHALL be defined by the application initiating the credential transfer.
 - Sender and Receiver SHALL both be able to manage the shared credential at any point by communicating with the Provisioning Partner. Credential lifecycle management is out of scope for this proposal.
