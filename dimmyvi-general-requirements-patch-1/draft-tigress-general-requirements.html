@@ -1161,25 +1161,28 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-use-cases" class="internal xref">Use Cases</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
-            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-assumptions" class="internal xref">Assumptions</a></p>
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-relationships" class="internal xref">Relationships</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-requirements" class="internal xref">Requirements</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-assumptions" class="internal xref">Assumptions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-requirements" class="internal xref">Requirements</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-normative-references" class="internal xref">Normative References</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.11.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
+            <p id="section-toc.1-1.12.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1190,9 +1193,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">In this document we are identifying a problem of transferring digital credentials (e.g. a digital car key, a digital key a a hotel room or a digital key to a private house) from a wallet on one device (smartphone) to another, particularly, if these devices belong to two different platform (e.g. one is iOS, another - Android).
+<p id="section-1-1">In this document we are identifying a problem of transferring digital credentials (e.g. a digital car key, a digital key a a hotel room or a digital key to a private house) from a wallet on one device (smartphone) to another, particularly, if these devices belong to two different platforms (e.g. one is iOS, another - Android).
 Today, there is no widely accepted way of transferring digital credentials securely between two digital wallets independent of hardware and software manufacturer. This document describes the problem space and the requirements for the solution the working group creates.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">A Working Group, called Tigress has been established to find a solution to a given problem.
+<p id="section-1-2">A Working Group, called Tigress has been established to find a solution to the problem described above.
 Within the WG an initial solution was presented (https://datatracker.ietf.org/doc/draft-art-tigress). The community decided to generalize the requirements to the solution and consider alternative solutions within the WG.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">This document presents the general requirements to possible solutions and  specifies certain privacy requirements in order to maintain a high level of user privacy.<a href="#section-1-3" class="pilcrow">¶</a></p>
 </section>
@@ -1203,10 +1206,10 @@ Within the WG an initial solution was presented (https://datatracker.ietf.org/do
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-general-setting" class="section-name selfRef">General Setting</a>
       </h2>
 <p id="section-2-1">When sharing digital secure credentials, there are several actors involved. This document will focus on sharing information between two digital wallets, directly or through an intermediary server.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">Digital credentials provide an access to property owned and operated by 3-rd party companies, such as hotel or residential building owners. The companies that are providing the digital credential for consumption by a digital wallet are the Provisioning Partners.
+<p id="section-2-2">Digital credentials provide access to property owned and operated by 3-rd party companies, such as hotel or residential building owners. The companies that are providing the digital credential for consumption by a digital wallet are referred to as Provisioning Partners.
 Provisioning Partner require to have control over digital credential issuance and life time management. Each digital wallet has a preexisting trust relationship between itself and the Provisioning Partner.<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">The interface between the devices and the Provisioning Partner can be proprietary or a part of published specifications. The sender wallet obtains provisioning information from the provisioning partner, then shares it to the recipient using a solution defined in Tigress WG. The recipient then takes that data and sends it to the Provisioning Partner to redeem a credential for consumption in a digital wallet.<a href="#section-2-3" class="pilcrow">¶</a></p>
-<p id="section-2-4">For some credential types the Provisioning Partner who issues new credentials is actually the sender wallet. In that scenario the receiver will generate a new key material at the request of the sender, and then communicate with the sender over Tigress to have its key material signed by the sender.<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-3">The interface between the device and the Provisioning Partner can be proprietary or a part of published specifications. The sender wallet obtains provisioning information from the Provisioning Partner, then shares it to the recipient using a solution defined in Tigress WG. The recipient then takes that provisioning information and sends it to the Provisioning Partner to redeem for credential for consumption in a digital wallet.<a href="#section-2-3" class="pilcrow">¶</a></p>
+<p id="section-2-4">For some credential types the Provisioning Partner who issues new credentials is actually the sender wallet. In that scenario the receiver will generate a new key material at the request of the sender, and then communicate with the sender over Tigress to have its key material signed by the sender. New credential, with the key material generated by receiver device and signed by sender device, will finally be added (provisioned) into a digital wallet on sender device.<a href="#section-2-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1245,62 +1248,95 @@ appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶<
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-use-cases" class="section-name selfRef">Use Cases</a>
       </h2>
 <ul class="normal">
-<li class="normal" id="section-4-1.1">Let's say Ben owns a vehicle that supports digital car keys. Ben would like to let Ryan borrow the car for the weekend. Ryan and Ben are using two different mobile phones with different operating systems. In order for Ben to share his digital car key to Ryan for a weekend, he must transfer some data to the receiver device. Receiver device generates new key material and return it to the sender to sign and return back to the receiver. At this point, the receiver now has a token that will allow them to provision their new key with the car.<a href="#section-4-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-4-1.1">Let's say Ben owns a vehicle that supports digital car keys. Ben would like to let Ryan borrow the car for the weekend. Ryan and Ben are using two different devices (smartphones) with different operating systems. In order for Ben to share his digital car key to Ryan for a weekend, he must transfer some data to the receiver device. Receiver device generates new key material and return it to the sender to sign and return back to the receiver. At this point, the receiver now has a token that will allow them to provision their new key with the car.<a href="#section-4-1.1" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-4-1.2">Bob booked a room at a hotel for the weekend, but will be arriving late at night. Alice, his partner, comes to the hotel first, so Bob wants to share his digital room key with Alice. Bob and Alice are using two different mobile phones with different operating systems. In order for Bob to share his digital room key to Alice for a weekend, he must transfer some data to her device. The data structure shared between the two participants is proprietary to the given hotel chain (or Provisioning Partner). This data transfer is a one-time, unidirectional transfer from Bob's device to Alice's. Once Alice receives this data, she can provision a new key to her digital wallet, making a call to Provisioning Partner to receive new credential information.<a href="#section-4-1.2" class="pilcrow">¶</a>
 </li>
       </ul>
 </section>
 </div>
-<div id="assumptions">
+<div id="relationships">
 <section id="section-5">
+      <h2 id="name-relationships">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-relationships" class="section-name selfRef">Relationships</a>
+      </h2>
+<p id="section-5-1"><code>mermaid
+sequenceDiagram with intermediary
+    actor S as Sender
+    participant I as Intermediary
+    actor R as Receiver
+    S -&gt;&gt; I : upload provisioning information
+    break Generic messaging channel
+      S -&gt;&gt; R : send invite
+    end
+    Loop Provision credential
+      R -&gt;&gt; I : request additional provisioning information
+      I -&gt;&gt; R : deliver additional provisioning information
+    end
+</code><a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-5-2"><code>mermaid
+sequenceDiagram direct secure exchange
+    actor S as Sender
+    actor R as Receiver
+    break secure messaging channel
+      S -&gt;&gt; R : transfer provisioning information E2E
+    end
+    Loop Provision credential
+      R -&gt;&gt; S : request additional provisioning information
+      S -&gt;&gt; R : deliver additional provisioning information
+    end
+</code><a href="#section-5-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="assumptions">
+<section id="section-6">
       <h2 id="name-assumptions">
-<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-assumptions" class="section-name selfRef">Assumptions</a>
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-assumptions" class="section-name selfRef">Assumptions</a>
       </h2>
 <ul class="normal">
-<li class="normal" id="section-5-1.1">Original credential information (with cryptographic key material) <span class="bcp14">MUST NOT</span> be sent or shared. Instead, sender <span class="bcp14">SHALL</span> be transferring its approval token for Receiver to acquire new credential information. The reason for that is that the Provisioning Partner needs to control who the new credential is issued to, control new credential life cycle and manage the credentials on sender and receiver devices independently (e.g. receiver device may have just a subset of the sender's device access rights or receiver's device credential may be revoked independently of the sender's device credential).<a href="#section-5-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-6-1.1">Original credential information (with cryptographic key material) must not be sent or shared. Instead, sender shall be transferring its approval token for Receiver to acquire new credential information. The reason for that is that the Provisioning Partner needs to control who the new credential is issued to, control new credential's lifecycle and manage the credentials on sender and receiver devices independently (e.g. receiver device may have just a subset of the sender's device access rights or receiver's device credential may be revoked independently of the sender's device credential).<a href="#section-6-1.1" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-5-1.2">Provisioning Partner <span class="bcp14">SHALL NOT</span> allow for two users to use the same credential / cryptographic keys - this requirenet is a direct result of the previous assumption. Credentials on sender's and receiver's devices shall be different to be managed independently. If the same cryptographic key is copied and provisioned on a new device, in case of key revocation both devices will lose access.<a href="#section-5-1.2" class="pilcrow">¶</a>
+        <li class="normal" id="section-6-1.2">Provisioning Partner shall not allow for two users to use the same credential / cryptographic keys - this requirement is a direct result of the previous assumption. Credentials on sender and receiver devices shall be different to be managed independently. If the same cryptographic key were copied and provisioned on a new device, in case of key revocation both devices would lose access.<a href="#section-6-1.2" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-5-1.3">Security: Communication between Sender / Receiver and Provisioning Partner <span class="bcp14">SHOULD</span> be trusted. Since new credential key matherial is generated by Provisioning Partner the channel between the device and Provisioning Provider shall be secure and trusted by both parties.<a href="#section-5-1.3" class="pilcrow">¶</a>
+        <li class="normal" id="section-6-1.3">Security: Communication between sender or receiver devices and Provisioning Partner should be trusted. Since new credential's key matherial is generated by Provisioning Partner, the channel between the device and Provisioning Provider shall be secure and trusted by both parties.<a href="#section-6-1.3" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-5-1.4">In case if an intermediary server used during the credential transfer from sender device to receiver device, the choice of intermediary <span class="bcp14">SHALL</span> be defined by the application initiating the credential transfer. The wallet or another application that manages credentials on sender device shall make the decision regarding the channel to be used to sent the Provisioning Information.<a href="#section-5-1.4" class="pilcrow">¶</a>
+        <li class="normal" id="section-6-1.4">In case if an intermediary server, used during the credential transfer from sender device to receiver device, the choice of intermediary shall be defined by the application initiating the credential transfer. Digital wallet or another application that manages credentials on sender device shall make the decision regarding the channel to be used to sent the Provisioning Information.<a href="#section-6-1.4" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-5-1.5">Sender and Receiver <span class="bcp14">SHALL</span> both be able to manage the shared credential at any point by communicating with the Provisioning Partner.<a href="#section-5-1.5" class="pilcrow">¶</a>
+        <li class="normal" id="section-6-1.5">Sender and Receiver shall both be able to manage the shared credential at any point by communicating with the Provisioning Partner.<a href="#section-6-1.5" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-5-1.6">Any device OEM with a digital credential implementation adherent to Tigress solution <span class="bcp14">SHALL</span> be able to receive shared provisioning information, whether or not they can originate provisioning information themselves. We defined the digital credential transfer as platform-independant, therefore, if the receiver device can recognize the data format of the received Provisioning Information, it should be able to provision the new credential to the Digital Wallet.<a href="#section-5-1.6" class="pilcrow">¶</a>
+        <li class="normal" id="section-6-1.6">Any device OEM with a digital credential implementation adherent to Tigress solution shall be able to receive shared provisioning information, whether or not they can originate provisioning information themselves. We define the digital credential transfer as platform-independant; therefore, if the receiver device can recognize the data format of the received Provisioning Information, it should be able to provision the new credential to the Digital Wallet.<a href="#section-6-1.6" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-5-1.7">Provisioning a credential on the Receiver <span class="bcp14">MAY</span> require multiple round trips. In case the Provisioning Partner is not used for the certan type of credentials, both sender and receiver devices are used to generate new credentials' cryptographic key matherial and sign on the new cryptographic key for it to be trusted by the access point.<a href="#section-5-1.7" class="pilcrow">¶</a>
+        <li class="normal" id="section-6-1.7">Provisioning new credential on the receiver may require multiple round trips. In case the Provisioning Partner is not used for a certain type of credentials, both sender and receiver devices are used to generate new credential's cryptographic key matherial and sign on the new cryptographic key for it to be trusted by the access point.<a href="#section-6-1.7" class="pilcrow">¶</a>
 </li>
       </ul>
 </section>
 </div>
 <div id="requirements">
-<section id="section-6">
+<section id="section-7">
       <h2 id="name-requirements">
-<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-requirements" class="section-name selfRef">Requirements</a>
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-requirements" class="section-name selfRef">Requirements</a>
     </h2>
 </section>
 </div>
 <div id="security-considerations">
-<section id="section-7">
+<section id="section-8">
       <h2 id="name-security-considerations">
-<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-7-1">TODO Security<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-8-1">TODO Security<a href="#section-8-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
-<section id="section-8">
+<section id="section-9">
       <h2 id="name-iana-considerations">
-<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-8-1">This document has no IANA actions.<a href="#section-8-1" class="pilcrow">¶</a></p>
+<p id="section-9-1">This document has no IANA actions.<a href="#section-9-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<section id="section-9">
+<section id="section-10">
       <h2 id="name-normative-references">
-<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
       </h2>
 <dl class="references">
 <dt id="RFC2119">[RFC2119]</dt>
