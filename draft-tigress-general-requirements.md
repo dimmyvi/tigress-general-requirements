@@ -101,7 +101,10 @@ General terms:
 
 
 ```mermaid
-sequenceDiagram with intermediary
+---
+title: Flow with intermediary
+---
+sequenceDiagram
     actor S as Sender
     participant I as Intermediary
     actor R as Receiver
@@ -116,7 +119,10 @@ sequenceDiagram with intermediary
 ```
 
 ```mermaid
-sequenceDiagram direct secure exchange
+---
+title: Flow with direct secure exchange
+---
+sequenceDiagram
     actor S as Sender
     actor R as Receiver
     break secure messaging channel
