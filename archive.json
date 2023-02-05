@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-02-02T01:00:36.748474+00:00",
+  "timestamp": "2023-02-05T01:04:16.020710+00:00",
   "repo": "dimmyvi/tigress-general-requirements",
   "labels": [
     {
@@ -63,19 +63,118 @@
       "labels": [],
       "body": "Starting to write a document with general requirements.  Updated the Introduction and assumptions sections.",
       "createdAt": "2023-01-27T00:43:30Z",
-      "updatedAt": "2023-01-27T19:40:47Z",
+      "updatedAt": "2023-02-04T00:00:37Z",
       "baseRepository": "dimmyvi/tigress-general-requirements",
       "baseRefName": "main",
       "baseRefOid": "6991c5095ff8ff58861b51ca1253ebd8814e00e8",
       "headRepository": "dimmyvi/tigress-general-requirements",
       "headRefName": "dimmyvi-general-requirements-patch-1",
-      "headRefOid": "f8eaa8f3628f2f5d10f94cff550f534669f5a5a0",
+      "headRefOid": "27756716770f9a7c8fba887e964fdd95744dba05",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOIlUyos5MheY3",
+          "commit": {
+            "abbreviatedOid": "f8eaa8f"
+          },
+          "author": "bslassey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-03T22:36:24Z",
+          "updatedAt": "2023-02-03T23:01:35Z",
+          "comments": [
+            {
+              "originalPosition": 62,
+              "body": "You talk about the sender wallet playing this role later on, so it might be worth acknowledging that one entity can play both roles at this point so the intervening text can be read with that in mind.\r\n\r\nAs to the wallet having a pre-existing trust relation ship with the provisioning entity, why is that required? What would happen if the wallet doesn't trust the provisioning entity?",
+              "createdAt": "2023-02-03T22:36:24Z",
+              "updatedAt": "2023-02-03T23:01:35Z"
+            },
+            {
+              "originalPosition": 61,
+              "body": "Two nits on language choices here. First \"companies\" imply some sort of separate legal structure which I don't think is required here. You could think of Apple provisioning keys to an door lock to an Apple phone. May I suggest using 'entity' or 'actor'?\r\n\r\nSecond, \"partner\" implies a business relationship, which may not exist. I think we can use the same term as above (i.e. \"provisioning entity\")",
+              "createdAt": "2023-02-03T22:40:55Z",
+              "updatedAt": "2023-02-03T23:01:36Z"
+            },
+            {
+              "originalPosition": 68,
+              "body": "A concrete example of how this could work would be helpful here, perhaps as an appendix.",
+              "createdAt": "2023-02-03T22:59:26Z",
+              "updatedAt": "2023-02-03T23:01:36Z"
+            },
+            {
+              "originalPosition": 77,
+              "body": "it might be helpful to describe this as providing a store and forward service",
+              "createdAt": "2023-02-03T23:00:30Z",
+              "updatedAt": "2023-02-03T23:01:36Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5MhuTn",
+          "commit": {
+            "abbreviatedOid": "f8eaa8f"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-03T23:42:33Z",
+          "updatedAt": "2023-02-03T23:42:34Z",
+          "comments": [
+            {
+              "originalPosition": 62,
+              "body": "Normally it would be authenticated access from device to Partner - based on auth by client TLS cert or some form of a token. Partner endpoints are protected from unauthorized access. I struggling with how to concisely formulate this",
+              "createdAt": "2023-02-03T23:42:33Z",
+              "updatedAt": "2023-02-03T23:42:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5MhuaS",
+          "commit": {
+            "abbreviatedOid": "f8eaa8f"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-03T23:43:29Z",
+          "updatedAt": "2023-02-03T23:43:29Z",
+          "comments": [
+            {
+              "originalPosition": 61,
+              "body": "Thanks Brad!\r\nI do like \"entity\" here, I'll update the wording here.\r\nWe use the term \"provisioning partner\" here because it is a 1) business partner and 2) trusted partner - both provisioning partner and apple has to establish authenticated authorized connection in order to facilitate credentials provisioning.\r\nIt can certainly change to \"Provisioning Entity\", only it is going to be confusing for us internally , as we have developed certain vocabulary.\r\nBTW, we are discussing here just provisioning part (when we add new keys to wallet), not the Reader's (actual access) part - when wallet communitcates with the actual locks in order to grant access to a wallet user. ",
+              "createdAt": "2023-02-03T23:43:29Z",
+              "updatedAt": "2023-02-03T23:50:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5MhwHC",
+          "commit": {
+            "abbreviatedOid": "f8eaa8f"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-04T00:00:36Z",
+          "updatedAt": "2023-02-04T00:00:37Z",
+          "comments": [
+            {
+              "originalPosition": 62,
+              "body": "Added a paragraph with devices roles",
+              "createdAt": "2023-02-04T00:00:36Z",
+              "updatedAt": "2023-02-04T00:00:37Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
