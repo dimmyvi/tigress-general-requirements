@@ -46,6 +46,12 @@ normative:
 
 
 informative:
+  CCC-Digital-Key-30:
+    author:
+      org: Car Connectivity Consortium
+    title: "Digital Key Release 3"
+    date: 2022-07
+    target: https://carconnectivity.org/download-digital-key-3-specification/
 
 
 --- abstract
