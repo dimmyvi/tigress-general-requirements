@@ -106,7 +106,7 @@ General terms:
 - Provisioning Partner - an entity which facilitates Credential Information lifecycle on a device. Lifecycle may include provisioning of credential, credential termination, credential update.
 - Sender (device) - a device initiating a transfer of Provisioning Information to a Receiver that can provision this credential.
 - Receiver (device) - a device that receives Provisioning Information and uses it to provision a new credential.
-- Intermediary (server) - an optionl intermediary server that provides a standardized and platform-independent way of transferring provisioning information between Sender and Receiver devices.
+- Intermediary (server) - an optional intermediary server that provides a standardized and platform-independent way of transferring provisioning information between Sender and Receiver devices, acting as a temporary store and forward service between Sender and Receiver.
 - Digital Wallet - A device, service, and/or software that faciliates transactions either online or in-person via a technology like NFC. Digital Wallet's typically support payments, drivers licenses, loyalty cards, access credentials and more.
 
 # Use Cases
