@@ -144,11 +144,12 @@ Table of Contents
 
    mermaid sequenceDiagram actor S as Sender participant I as
    Intermediary actor R as Receiver S ->> I : upload Sharing
-   Invititation (CCC) break Generic messaging channel S ->> R : send
-   invite end break CCC Credential Provisioning flow R ->> I : upload
-   Key Signing Request (CCC) S ->> I : read Key Signing Request,
-   generate and upload Key Import Request (CCC) R ->> I : read Key
-   Import Request and Import Key Data (CCC) end
+   Invititation ({{CCC-Digital-Key-30}}) break Generic messaging channel
+   S ->> R : send invite end break Credential Provisioning flow {{CCC-
+   Digital-Key-30}} R ->> I : upload Key Signing Request ({{CCC-Digital-
+   Key-30}}) S ->> I : read Key Signing Request, generate and upload Key
+   Import Request ({{CCC-Digital-Key-30}}) R ->> I : read Key Import
+   Request and Import Key Data ({{CCC-Digital-Key-30}}) end
 
 3.  Conventions and Definitions
 

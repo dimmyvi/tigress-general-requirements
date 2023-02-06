@@ -1214,14 +1214,14 @@ sequenceDiagram
     actor S as Sender
     participant I as Intermediary
     actor R as Receiver
-    S -&gt;&gt; I : upload Sharing Invititation (CCC)
+    S -&gt;&gt; I : upload Sharing Invititation ({{CCC-Digital-Key-30}})
     break Generic messaging channel
       S -&gt;&gt; R : send invite
     end
-    break CCC Credential Provisioning flow
-      R -&gt;&gt; I : upload Key Signing Request (CCC)
-      S -&gt;&gt; I : read Key Signing Request, generate and upload Key Import Request (CCC)
-      R -&gt;&gt; I : read Key Import Request and Import Key Data (CCC)
+    break Credential Provisioning flow {{CCC-Digital-Key-30}}
+      R -&gt;&gt; I : upload Key Signing Request ({{CCC-Digital-Key-30}})
+      S -&gt;&gt; I : read Key Signing Request, generate and upload Key Import Request ({{CCC-Digital-Key-30}})
+      R -&gt;&gt; I : read Key Import Request and Import Key Data ({{CCC-Digital-Key-30}})
     end
 </code><a href="#section-2-6" class="pilcrow">¶</a></p>
 </section>
