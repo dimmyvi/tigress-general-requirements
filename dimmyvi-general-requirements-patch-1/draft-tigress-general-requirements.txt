@@ -73,7 +73,9 @@ Table of Contents
    3.  Conventions and Definitions
    4.  Use Cases
    5.  Relationships
-   6.  Normative References
+   6.  References
+     6.1.  Normative References
+     6.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
@@ -219,7 +221,9 @@ Table of Contents
 
    ```mermaid
 
-6.  Normative References
+6.  References
+
+6.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -229,6 +233,13 @@ Table of Contents
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+6.2.  Informative References
+
+   [CCC-Digital-Key-30]
+              Car Connectivity Consortium, "Digital Key Release 3", July
+              2022, <https://carconnectivity.org/download-digital-key-
+              3-specification/>.
 
 Acknowledgments
 
