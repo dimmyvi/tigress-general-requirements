@@ -5,10 +5,10 @@
 TIGRESS                                                     D. Vinokurov
 Internet-Draft                                                  C. Astiz
 Intended status: Informational                              A. Pelletier
-Expires: 10 August 2023                                        Apple Inc
+Expires: 14 August 2023                                        Apple Inc
                                                                B. Lassey
                                                             Alphabet Inc
-                                                         6 February 2023
+                                                        10 February 2023
 
 
       Transfer Digital Credentials Securely - General Requirements
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 August 2023.
+   This Internet-Draft will expire on 14 August 2023.
 
 Copyright Notice
 
@@ -107,15 +107,15 @@ Table of Contents
    involved.  This document will focus on sharing information between
    two digital wallets, directly or through an intermediary server.
 
-   Digital credentials provide access to property owned and operated by
-   3-rd party entities, such as hotel or residential building owners.
-   The entity that is providing the digital credential for consumption
-   by a digital wallet are referred to as Provisioning Partners.
-   Provisioning Partner require to have control over digital credential
-   issuance and life time management.  Each digital wallet has a
-   preexisting trust relationship between itself and the Provisioning
-   Partner (authentication and authorization in order to access to API
-   endpoints).
+   Digital credentials provide access to property owned and / or
+   operated by 3-rd party entities, such as hotel or residential
+   building owners.  The entity that is providing the digital credential
+   for consumption by a digital wallet are referred to as Provisioning
+   Partners.  Provisioning Partner require to have control over digital
+   credential issuance and life time management.  Each digital wallet
+   has a preexisting trust relationship between itself and the
+   Provisioning Partner (authentication and authorization in order to
+   access to API endpoints).
 
    Digital wallet is a combination of software and hardware in a
    smartphone device, there are two devices involved in credentail
