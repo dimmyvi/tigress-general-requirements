@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-02-09T00:59:27.791522+00:00",
+  "timestamp": "2023-02-12T01:04:33.618285+00:00",
   "repo": "dimmyvi/tigress-general-requirements",
   "labels": [
     {
@@ -63,13 +63,13 @@
       "labels": [],
       "body": "Starting to write a document with general requirements.  Updated the Introduction and assumptions sections.",
       "createdAt": "2023-01-27T00:43:30Z",
-      "updatedAt": "2023-02-06T18:40:21Z",
+      "updatedAt": "2023-02-10T18:52:13Z",
       "baseRepository": "dimmyvi/tigress-general-requirements",
       "baseRefName": "main",
       "baseRefOid": "6991c5095ff8ff58861b51ca1253ebd8814e00e8",
       "headRepository": "dimmyvi/tigress-general-requirements",
       "headRefName": "dimmyvi-general-requirements-patch-1",
-      "headRefOid": "e5bce5277bcd01e397ee14b862dafa780e61d403",
+      "headRefOid": "b49936c167d42ec564ad7b0b68691fb5df223eeb",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -211,6 +211,126 @@
               "body": "updated the description",
               "createdAt": "2023-02-06T18:33:23Z",
               "updatedAt": "2023-02-06T18:33:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5NBcNe",
+          "commit": {
+            "abbreviatedOid": "e5bce52"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-10T00:29:50Z",
+          "updatedAt": "2023-02-10T00:29:51Z",
+          "comments": [
+            {
+              "originalPosition": 61,
+              "body": "Should this be just operated by 3rd party entities in the case of car key?",
+              "createdAt": "2023-02-10T00:29:51Z",
+              "updatedAt": "2023-02-10T00:29:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5NBnYK",
+          "commit": {
+            "abbreviatedOid": "e5bce52"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-10T01:47:21Z",
+          "updatedAt": "2023-02-10T01:47:21Z",
+          "comments": [
+            {
+              "originalPosition": 157,
+              "body": "small note -- key matherial -> material",
+              "createdAt": "2023-02-10T01:47:21Z",
+              "updatedAt": "2023-02-10T01:47:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5NBne1",
+          "commit": {
+            "abbreviatedOid": "e5bce52"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-10T01:48:04Z",
+          "updatedAt": "2023-02-10T01:48:04Z",
+          "comments": [
+            {
+              "originalPosition": 158,
+              "body": "small note -- In case if -> In case of",
+              "createdAt": "2023-02-10T01:48:04Z",
+              "updatedAt": "2023-02-10T01:48:05Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5NHeZb",
+          "commit": {
+            "abbreviatedOid": "e5bce52"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-10T18:50:10Z",
+          "updatedAt": "2023-02-10T18:50:11Z",
+          "comments": [
+            {
+              "originalPosition": 61,
+              "body": "changed to \"owned and / or operated\"",
+              "createdAt": "2023-02-10T18:50:10Z",
+              "updatedAt": "2023-02-10T18:50:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5NHfMZ",
+          "commit": {
+            "abbreviatedOid": "e5bce52"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-10T18:51:30Z",
+          "updatedAt": "2023-02-10T18:51:31Z",
+          "comments": [
+            {
+              "originalPosition": 157,
+              "body": "fixed, thanks for catching this",
+              "createdAt": "2023-02-10T18:51:31Z",
+              "updatedAt": "2023-02-10T18:51:31Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5NHfxE",
+          "commit": {
+            "abbreviatedOid": "e5bce52"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-10T18:52:04Z",
+          "updatedAt": "2023-02-10T18:52:05Z",
+          "comments": [
+            {
+              "originalPosition": 158,
+              "body": "fixed",
+              "createdAt": "2023-02-10T18:52:04Z",
+              "updatedAt": "2023-02-10T18:52:05Z"
             }
           ]
         }
