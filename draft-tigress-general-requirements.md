@@ -138,7 +138,7 @@ sequenceDiagram
     break Generic messaging channel
       S ->> R : send invite
     end
-    Loop Provision credential
+    loop Provision credential
       R ->> I : request additional provisioning information
       I ->> R : deliver additional provisioning information
     end
@@ -153,7 +153,7 @@ sequenceDiagram
     break secure messaging channel
       S ->> R : transfer provisioning information E2E
     end
-    Loop Provision credential
+    loop Provision credential
       R ->> S : request additional provisioning information
       S ->> R : deliver additional provisioning information
     end
