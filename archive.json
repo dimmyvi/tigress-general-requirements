@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-02-12T01:04:33.618285+00:00",
+  "timestamp": "2023-02-14T01:02:27.521480+00:00",
   "repo": "dimmyvi/tigress-general-requirements",
   "labels": [
     {
@@ -56,24 +56,26 @@
       "id": "PR_kwDOIlUyos5IotvJ",
       "title": "Update draft-tigress-general-requirements.md",
       "url": "https://github.com/dimmyvi/tigress-general-requirements/pull/1",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "dimmyvi",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Starting to write a document with general requirements.  Updated the Introduction and assumptions sections.",
       "createdAt": "2023-01-27T00:43:30Z",
-      "updatedAt": "2023-02-10T18:52:13Z",
+      "updatedAt": "2023-02-13T23:30:32Z",
       "baseRepository": "dimmyvi/tigress-general-requirements",
       "baseRefName": "main",
       "baseRefOid": "6991c5095ff8ff58861b51ca1253ebd8814e00e8",
       "headRepository": "dimmyvi/tigress-general-requirements",
       "headRefName": "dimmyvi-general-requirements-patch-1",
-      "headRefOid": "b49936c167d42ec564ad7b0b68691fb5df223eeb",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "df1b3a5a8f00c26a32c3984f6c9e371e5ee182d8",
+      "closedAt": "2023-02-13T23:30:31Z",
+      "mergedAt": "2023-02-13T23:30:31Z",
+      "mergedBy": "dimmyvi",
+      "mergeCommit": {
+        "oid": "03aa07082d6c073171e63b63038706dbbb206059"
+      },
       "comments": [],
       "reviews": [
         {
