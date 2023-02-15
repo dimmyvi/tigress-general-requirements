@@ -1,9 +1,9 @@
 ---
-title: "Transfer Digital Credentials Securely - Sample Implementation - Signal Protocol"
-abbrev: "tigress-signal-sample-implementation"
+title: "Transfer Digital Credentials Securely - Sample Implementation - WebDAV Protocol"
+abbrev: "tigress-webdav-sample-implementation"
 category: info
 
-docname: draft-tigress-signal-sample-implementation-latest
+docname: draft-tigress-webdav-sample-implementation-latest
 submissiontype: IETF
 number:
 date:
@@ -51,7 +51,7 @@ informative:
 
 --- abstract
 
-This document describes a sample implementation of transferring digital credentials securily (Tigress) using Signal protocol.
+This document describes a sample implementation of transferring digital credentials securily (Tigress) using WebDAV protocol.
 
 --- middle
 
