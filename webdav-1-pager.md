@@ -1,10 +1,75 @@
-# WebDAV 1 pager
+---
+title: "Transfer Digital Credentials Securely - Sample Implementation - Signal Protocol"
+abbrev: "tigress-signal-sample-implementation"
+category: info
 
- WebDAV (Web Distributed Authoring and Versioning) is a protocol that allows users to edit and manage files on remote web servers. It extends the HTTP protocol, adding functionality for creating, editing, and moving files and directories on a remote server. The protocol is defined in RFC 4918, "HTTP Extensions for Web Distributed Authoring and Versioning (WebDAV)". Since the core of transferring secure credentials is to allow a data blob to pass between two users, we can leverage the WebDAV protocol to create the secure communication channel between sender and receiver.
+docname: draft-tigress-signal-sample-implementation-latest
+submissiontype: IETF
+number:
+date:
+consensus: true
+v: 3
+area: ART
+workgroup: TIGRESS
+keyword: Internet-Draft
+venue:
+#  group: WG
+#  type: Working Group
+#  mail: WG@example.com
+#  arch: https://example.com/WG
+  github: "dimmyvi/tigress-general-requirements"
+  latest: "https://datatracker.ietf.org/doc/draft-tigress-general-requirements/"
+
+author:
+ -
+    ins: C. Astiz
+    name: Casey Astiz
+    organization: Apple Inc
+    email: castiz@apple.com
+
+normative:
+
+informative:
+  Tigress-req-02:
+    author:
+    -
+      ins: D. Vinokurov
+      name: Dmitry Vinokurov
+    -
+      ins: A. Pelletier
+      name: Alex Pelletier
+    -
+      ins: C. Astiz
+      name: Casey Astiz
+    -
+      ins: B Lassey
+      name: Brad Lassey
+    title: "Tigress general requirements"
+    date: 2023-02
+    target: https://github.com/dimmyvi/tigress-general-requirements/
+
+
+--- abstract
+
+This document describes a sample implementation of transferring digital credentials securily (Tigress) using Signal protocol.
+
+--- middle
+
+# Introduction
+
+In this document we are trying to describe how a possible implementation of a solution to Tigress {{Tigress-req-02}} problem of transferring digital credentials securily can be done using WebDAV Protocol {{!RFC4918}}.
+
+# Conventions and Definitions
+
+{::boilerplate bcp14-tagged}
+
+# WebDAV Protocol Sample Implementation
+
+ WebDAV (Web Distributed Authoring and Versioning)  {{!RFC4918}} is a protocol that allows users to edit and manage files on remote web servers. It extends the HTTP protocol, adding functionality for creating, editing, and moving files and directories on a remote server. The protocol is defined in {{!RFC4918}}, "HTTP Extensions for Web Distributed Authoring and Versioning (WebDAV)". Since the core of transferring secure credentials is to allow a data blob to pass between two users, we can leverage the WebDAV protocol to create the secure communication channel between sender and receiver.
 
  ## Secure Credential Transfer with WebDAV:
 
- For Secure Credential Transfer with WebDAV, the implementing party will host a remote WebDAV server that mobile devices can interact with. This will act as an intermediary between the sender and receiver device to create a safe communication channel. 
+ For Secure Credential Transfer {{Tigress-req-02}} with WebDAV, the implementing party will host a remote WebDAV server that mobile devices can interact with. This will act as an intermediary between the sender and receiver device to create a safe communication channel. 
 
  There are two different workflows for transferring of digital credentials. Refer to Credential Transfer Workflows in Secure Credential Transfer Draft: https://github.com/dimmyvi/secure-credential-transfer/blob/main/draft-secure-credential-transfer.md#credential-transfer-workflows. For the stateless flow, the sender device will upload a file with the provisioning information required for the receiver to redeem the pass using HTTP PUT. Because this is the final state this resource will be in, the sender will also perform a HTTP LOCK on the resource. 
 
@@ -17,3 +82,21 @@
  In either case, the WebDAV remote server should clean up any remaining resources after a short period, such as 24 hours for example. 
 
  Continue to use the same structure as defined here: https://github.com/dimmyvi/secure-credential-transfer/blob/main/draft-secure-credential-transfer.md#provisioning-information-structure. Both users must implement WebDAV in order to share and receive keys. As noted in the other solutions, WebDAV will only be used to share the data that is necessary and sufficient to redeem the key. Once the data is obtained by the receiver, it is up to the device OEM or other implementor to redeem that key with the credential authority. 
+ 
+
+# Security Considerations
+
+TODO Security
+
+
+# IANA Considerations
+
+This document has no IANA actions.
+
+
+--- back
+
+# Acknowledgments
+{:numbered="false"}
+
+TODO acknowledge.
