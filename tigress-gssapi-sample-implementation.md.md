@@ -1,6 +1,71 @@
+---
+title: "Transfer Digital Credentials Securely - Sample Implementation with GSS API"
+abbrev: "tigress-gssapi-sample-implementation"
+category: info
+
+docname: draft-tigress-gssapi-sample-implementation-latest
+submissiontype: IETF
+number:
+date:
+consensus: true
+v: 3
+area: ART
+workgroup: TIGRESS
+keyword: Internet-Draft
+venue:
+#  group: WG
+#  type: Working Group
+#  mail: WG@example.com
+#  arch: https://example.com/WG
+  github: "dimmyvi/tigress-general-requirements"
+  latest: "https://datatracker.ietf.org/doc/draft-tigress-general-requirements/"
+
+author:
+ -
+    ins: C. Astiz
+    name: Casey Astiz
+    organization: Apple Inc
+    email: castiz@apple.com
+
+normative:
+
+informative:
+  Tigress-req-02:
+    author:
+    -
+      ins: D. Vinokurov
+      name: Dmitry Vinokurov
+    -
+      ins: A. Pelletier
+      name: Alex Pelletier
+    -
+      ins: C. Astiz
+      name: Casey Astiz
+    -
+      ins: B Lassey
+      name: Brad Lassey
+    title: "Tigress general requirements"
+    date: 2023-02
+    target: https://github.com/dimmyvi/tigress-general-requirements/
+
+
+--- abstract
+
+This document describes a sample implementation of transferring digital credentials securily (Tigress) using GSS API.
+
+--- middle
+
+# Introduction
+
+In this document we are trying to describe how a possible implementation of a solution to Tigress {{Tigress-req-02}} problem of transferring digital credentials securily can be done using GSS API {{!RFC2743}}.
+
+# Conventions and Definitions
+
+{::boilerplate bcp14-tagged}
+
 # GSS-Api Proposal 
 
- General security service application program interface, or GSS-API, from RFC-2743 (https://www.rfc-editor.org/rfc/rfc2743) defines a generic protocol for the security of messages being transferred and can provide authentication, integrity, and confidentiality. GSS-API does not define how the messages are sent between parties.
+ General security service application program interface, or GSS-API, from {{!RFC2743}} defines a generic protocol for the security of messages being transferred and can provide authentication, integrity, and confidentiality. GSS-API does not define how the messages are sent between parties.
 
  Leveraging GSS-API provides flexibility to easily change the security of how a credential is transferred, but a lot of work to define the communication channel between two devices is still required. GSS-API also requires that each party have auth credentials before the communication occurs, which isn’t a requirement for our use case.
 
@@ -26,3 +91,21 @@
      1. If the receiver is done they can terminate the transfer and send a GSS-API termination back to the sender.
          1. *Tigress*: How the session with the intermediary server between the sender and receiver is terminated would need to be defined by tigress.
      2. Or, the receiver can perform additional calls with the sender to complete transferring the credential.
+
+
+# Security Considerations
+
+TODO Security
+
+
+# IANA Considerations
+
+This document has no IANA actions.
+
+
+--- back
+
+# Acknowledgments
+{:numbered="false"}
+
+TODO acknowledge.
