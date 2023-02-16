@@ -81,7 +81,7 @@ In this document we are trying to describe how a possible implementation of a so
 
  In either case, the WebDAV remote server should clean up any remaining resources after a short period, such as 24 hours for example. 
 
- Continue to use the same structure as defined here: https://github.com/dimmyvi/secure-credential-transfer/blob/main/draft-secure-credential-transfer.md#provisioning-information-structure. Both users must implement WebDAV in order to share and receive keys. As noted in the other solutions, WebDAV will only be used to share the data that is necessary and sufficient to redeem the key. Once the data is obtained by the receiver, it is up to the device OEM or other implementor to redeem that key with the credential authority. 
+ Continue to use the same structure as defined here: https://github.com/dimmyvi/secure-credential-transfer/blob/main/draft-secure-credential-transfer.md#provisioning-information-structure. Both users must implement WebDAV in order to share and receive keys. As noted in the other solutions, WebDAV will only be used to share the data that is necessary and sufficient to redeem the key. Once the data is obtained by the receiver, it is up to the device OEM or other implementor to redeem that key with the credential authority. If push notifications are required for the use case, the implementor can extend the WebDAV intermediary server to incorporate push notifications to the sender and receiver devices. 
  
 
 # Security Considerations
