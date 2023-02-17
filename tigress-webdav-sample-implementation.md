@@ -57,7 +57,9 @@ This document describes a sample implementation of transferring digital credenti
 
 # Introduction
 
-In this document we are trying to describe how a possible implementation of a solution to Tigress {{Tigress-req-02}} problem of transferring digital credentials securily can be done using WebDAV Protocol {{!RFC4918}}.
+Prevously Tigress reviewed an implementation of digital credentials transfer using Tigress protocol (https://datatracker.ietf.org/doc/draft-art-tigress/). In previous IETF meetings community asked to review other possible solutions using alternative standards to illustrate how Tigress problem can be solved differently.
+In this document we are trying to describe how an alternative potential implementation of a solution to Tigress {{Tigress-req-02}} problem of transferring digital
+credentials securily can be done using WebDAV Protocol {{!RFC4918}}.
 
 # Conventions and Definitions
 
