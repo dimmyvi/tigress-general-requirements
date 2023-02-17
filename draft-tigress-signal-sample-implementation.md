@@ -36,7 +36,11 @@ normative:
 
 informative:
   Signal-20:
-    author: Moxie Marlinspike, Trevor Perrin
+    author: 
+    -
+      fullname: Moxie Marlinspike
+    -
+      fullname: Trevor Perrin
     title: "Signal Protocol. The Sesame Algorithm: Session Management for Asynchronous Message Encryption. Revision 2, 2017-04-143"
     date: 2017-04
     target: https://signal.org/docs/specifications/sesame/
