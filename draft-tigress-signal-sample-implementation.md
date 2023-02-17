@@ -26,6 +26,11 @@ author:
     name: Casey Astiz
     organization: Apple Inc
     email: castiz@apple.com
+ -
+    ins: D. Vinokurov
+    name: Dmitry Vinokurov
+    organization: Apple Inc
+    email: dvinokurov@apple.com
 
 normative:
 
