@@ -1,17 +1,19 @@
 ---
 title: "Transfer Digital Credentials Securely - Sample Implementation - WebDAV Protocol"
-abbrev: "tigress-webdav-sample-implementation"
 category: info
 
 docname: draft-tigress-webdav-sample-implementation-latest
 submissiontype: IETF
 number:
 date:
-consensus: true
+consensus: false
 v: 3
-area: ART
-workgroup: TIGRESS
-keyword: Internet-Draft
+area: "Applications and Real-Time"
+workgroup: "Transfer dIGital cREdentialS Securely"
+keyword:
+ - tigress
+ - sample-implementation
+ - WebDAV
 venue:
 #  group: WG
 #  type: Working Group
