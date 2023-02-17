@@ -70,7 +70,7 @@ In this document we are trying to describe how an alternative potential implemen
 
 {::boilerplate bcp14-tagged}
 
-# GSS-Api Proposal 
+# GSS-Api Proposal
 
  General security service application program interface, or GSS-API, from {{!RFC2743}} defines a generic protocol for the security of messages being transferred and can provide authentication, integrity, and confidentiality. GSS-API does not define how the messages are sent between parties.
 
