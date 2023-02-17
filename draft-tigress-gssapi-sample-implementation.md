@@ -26,6 +26,12 @@ author:
     name: Casey Astiz
     organization: Apple Inc
     email: castiz@apple.com
+ -
+    ins: A. Pelletier
+    name: Alex Pelletier
+    organization: Apple Inc
+    email: a_pelletier@apple.com
+
 
 normative:
 
