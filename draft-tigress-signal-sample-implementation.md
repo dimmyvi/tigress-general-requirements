@@ -36,7 +36,7 @@ normative:
 
 informative:
   Signal-20:
-    author: 
+    author:
     -
       fullname: Moxie Marlinspike
     -
