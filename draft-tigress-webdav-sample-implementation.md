@@ -18,7 +18,7 @@ venue:
 #  mail: WG@example.com
 #  arch: https://example.com/WG
   github: "dimmyvi/tigress-general-requirements"
-  latest: "https://datatracker.ietf.org/doc/draft-tigress-general-requirements/"
+  latest: "https://datatracker.ietf.org/doc/draft-tigress-webdav-sample-implementation/"
 
 author:
  -
