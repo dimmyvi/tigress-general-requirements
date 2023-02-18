@@ -1,5 +1,5 @@
 ---
-title: "Transfer Digital Credentials Securely - Sample Implementation with GSS API"
+title: "Tigress-GSS API-Sample Implementation"
 abbrev: "tigress-gssapi-impl"
 category: info
 
