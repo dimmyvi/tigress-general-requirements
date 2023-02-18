@@ -11,7 +11,7 @@ consensus: true
 v: 3
 area: ART
 workgroup: TIGRESS
-keyword: 
+keyword:
  - tigress
  - GSS API
  - sample implementation
