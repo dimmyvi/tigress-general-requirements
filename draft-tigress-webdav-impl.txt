@@ -188,9 +188,8 @@ Table of Contents
 
    [Tigress-req-02]
               Vinokurov, D., Pelletier, A., Astiz, C., and B. Lassey,
-              "Tigress general requirements", February 2023,
-              <https://github.com/dimmyvi/tigress-general-
-              requirements/>.
+              "Tigress requirements", February 2023,
+              <https://github.com/dimmyvi/tigress-requirements/>.
 
 Acknowledgments
 
