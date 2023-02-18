@@ -1,5 +1,5 @@
 ---
-title: "Transfer Digital Credentials Securely - Sample Implementation - Signal Protocol"
+title: "Tigress-Signal-Sample Implementation"
 abbrev: "tigress-signal-impl"
 category: info
 
