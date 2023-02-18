@@ -1,5 +1,5 @@
 ---
-title: "Transfer Digital Credentials Securely - Sample Implementation - WebDAV Protocol"
+title: "Tigress-WebDAV-Sample Implementation"
 category: info
 
 docname: draft-tigress-webdav-impl-latest
