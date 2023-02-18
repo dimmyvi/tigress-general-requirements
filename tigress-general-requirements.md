@@ -3,7 +3,7 @@ title: "Transfer Digital Credentials Securely - General Requirements"
 abbrev: "tigress-general-requirements"
 category: info
 
-docname: draft-tigress-general-requirements-latest
+docname: tigress-general-requirements-latest
 submissiontype: IETF
 number:
 date:
@@ -18,7 +18,6 @@ venue:
 #  mail: WG@example.com
 #  arch: https://example.com/WG
   github: "dimmyvi/tigress-general-requirements"
-  latest: "https://datatracker.ietf.org/doc/draft-tigress-general-requirements/"
 
 author:
  -
