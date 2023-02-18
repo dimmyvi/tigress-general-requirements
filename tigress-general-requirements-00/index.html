@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dimmyvi/tigress-general-requirements tigress-general-requirements-00 preview</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <style type="text/css">/*<![CDATA[*/
+      body { font-family: "Helvetica Neue","Open Sans", Helvetica, Calibri,sans-serif; }
+      h1, h2, td { font-family: "Helvetica Neue", "Roboto Condensed", "Open Sans", Helvetica, Calibri, sans-serif; }
+      h1 { font-size: 20px; } h2 { font-size: 16px; }
+      table { margin: 5px 10px; border-collapse: collapse; }
+      th, td { font-weight: normal; text-align: left; padding: 2px 5px; }
+      a:link { color: #000; } a:visited { color: #00a; }
+    /*]]>*/</style>
+  </head>
+  <body>
+    <h1>Editor's drafts for tigress-general-requirements-00 branch of <a href="https://github.com/dimmyvi/tigress-general-requirements/tree/tigress-general-requirements-00">dimmyvi/tigress-general-requirements</a></h1>
+    <p>View <a href="issues.html">saved issues</a>, or the latest GitHub <a href="https://github.com/dimmyvi/tigress-general-requirements/issues">issues</a> and <a href="https://github.com/dimmyvi/tigress-general-requirements/pulls">pull requests</a> in the <a href="https://github.com/dimmyvi/tigress-general-requirements">repo</a>.</p>
+    <table id="branch-tigress-general-requirements-00">
+      <tr>
+        <td><a href="./draft-tigress-webdav-impl.html" class="html draft-tigress-webdav-impl" title="Tigress-WebDAV-Sample Implementation (HTML)">Tigress-WebDAV-Sample Implementation</a></td>
+        <td><a href="./draft-tigress-webdav-impl.txt" class="txt draft-tigress-webdav-impl" title="Tigress-WebDAV-Sample Implementation (Text)">plain text</a></td>
+        <td>same as main</td>
+      </tr>
+      <tr>
+        <td><a href="./draft-tigress-signal-impl.html" class="html draft-tigress-signal-impl" title="Tigress-Signal-Sample Implementation (HTML)">tigress-signal-impl</a></td>
+        <td><a href="./draft-tigress-signal-impl.txt" class="txt draft-tigress-signal-impl" title="Tigress-Signal-Sample Implementation (Text)">plain text</a></td>
+        <td>same as main</td>
+      </tr>
+      <tr>
+        <td><a href="./draft-tigress-gssapi-impl.html" class="html draft-tigress-gssapi-impl" title="Tigress-GSS API-Sample Implementation (HTML)">tigress-gssapi-impl</a></td>
+        <td><a href="./draft-tigress-gssapi-impl.txt" class="txt draft-tigress-gssapi-impl" title="Tigress-GSS API-Sample Implementation (Text)">plain text</a></td>
+        <td>same as main</td>
+      </tr>
+    </table>
+    <script>
+window.onload = function() {
+  var referrer_branch = 'main';
+  // e.g., "https://github.com/user/repo/tree/main"
+  var chunks = document.referrer.split("/");
+  if (chunks[2] === 'github.com' && chunks[5] === 'tree') {
+    referrer_branch = chunks[6];
+  }
+  let branch = document.querySelector('#branch-' + referrer_branch);
+  let h = document.location.hash.substring(1);
+  if (h === 'show') {
+    document.location.hash = '#' + branch.id;
+  } else if (branch && h.startsWith('go')) {
+    let e = branch.querySelector(h.substring(2));
+    if (e && e.href) {
+      document.location = e.href;
+    }
+  }
+};
+    </script>
+  </body>
+</html>
