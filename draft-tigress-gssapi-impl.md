@@ -1,9 +1,9 @@
 ---
 title: "Transfer Digital Credentials Securely - Sample Implementation with GSS API"
-abbrev: "tigress-gssapi-sample-implementation"
+abbrev: "tigress-gssapi-impl"
 category: info
 
-docname: draft-tigress-gssapi-sample-implementation-latest
+docname: draft-tigress-gssapi-impl-latest
 submissiontype: IETF
 number:
 date:
@@ -18,7 +18,7 @@ venue:
 #  mail: WG@example.com
 #  arch: https://example.com/WG
   github: "dimmyvi/tigress-general-requirements"
-  latest: "https://datatracker.ietf.org/doc/draft-tigress-general-requirements/"
+  latest: "https://datatracker.ietf.org/doc/draft-tigress-gssapi-impl/"
 
 author:
  -
