@@ -8,8 +8,7 @@ Intended status: Informational                                 Apple Inc
 Expires: 22 August 2023                                 18 February 2023
 
 
- Transfer Digital Credentials Securely - Sample Implementation with GSS
-                                  API
+                 Tigress-GSS API-Sample Implementation
                     draft-tigress-gssapi-impl-latest
 
 Abstract
