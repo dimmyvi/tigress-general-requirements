@@ -19,7 +19,7 @@ venue:
 #  type: Working Group
 #  mail: WG@example.com
 #  arch: https://example.com/WG
-  github: "dimmyvi/tigress-general-requirements"
+  github: "dimmyvi/tigress-requirements"
   latest: "https://datatracker.ietf.org/doc/draft-tigress-webdav-impl/"
 
 author:
