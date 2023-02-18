@@ -1,9 +1,9 @@
 ---
 title: "Transfer Digital Credentials Securely - Sample Implementation - Signal Protocol"
-abbrev: "tigress-signal-sample-implementation"
+abbrev: "tigress-signal-impl"
 category: info
 
-docname: draft-tigress-signal-sample-implementation-latest
+docname: draft-tigress-signal-impl-latest
 submissiontype: IETF
 number:
 date:
@@ -18,7 +18,7 @@ venue:
 #  mail: WG@example.com
 #  arch: https://example.com/WG
   github: "dimmyvi/tigress-general-requirements"
-  latest: "https://datatracker.ietf.org/doc/draft-tigress-general-requirements/"
+  latest: "https://datatracker.ietf.org/doc/draft-tigress-signal-impl/"
 
 author:
  -
