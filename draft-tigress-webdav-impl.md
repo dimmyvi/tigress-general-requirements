@@ -2,7 +2,7 @@
 title: "Transfer Digital Credentials Securely - Sample Implementation - WebDAV Protocol"
 category: info
 
-docname: draft-tigress-webdav-sample-implementation-latest
+docname: draft-tigress-webdav-impl-latest
 submissiontype: IETF
 number:
 date:
@@ -20,7 +20,7 @@ venue:
 #  mail: WG@example.com
 #  arch: https://example.com/WG
   github: "dimmyvi/tigress-general-requirements"
-  latest: "https://datatracker.ietf.org/doc/draft-tigress-webdav-sample-implementation/"
+  latest: "https://datatracker.ietf.org/doc/draft-tigress-webdav-impl/"
 
 author:
  -
