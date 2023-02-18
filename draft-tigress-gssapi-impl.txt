@@ -10,7 +10,7 @@ Expires: 22 August 2023                                 18 February 2023
 
  Transfer Digital Credentials Securely - Sample Implementation with GSS
                                   API
-           draft-tigress-gssapi-sample-implementation-latest
+                    draft-tigress-gssapi-impl-latest
 
 Abstract
 
@@ -22,10 +22,9 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://datatracker.ietf.org/doc/draft-tigress-general-requirements/.
-   Status information for this document may be found at
-   https://datatracker.ietf.org/doc/draft-tigress-gssapi-sample-
-   implementation/.
+   https://datatracker.ietf.org/doc/draft-tigress-gssapi-impl/.  Status
+   information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-tigress-gssapi-impl/.
 
    Source for this draft and an issue tracker can be found at
    https://github.com/dimmyvi/tigress-general-requirements.
