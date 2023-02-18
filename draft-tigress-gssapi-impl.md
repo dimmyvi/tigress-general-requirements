@@ -11,13 +11,16 @@ consensus: true
 v: 3
 area: ART
 workgroup: TIGRESS
-keyword: Internet-Draft
+keyword: 
+ - tigress
+ - GSS API
+ - sample implementation
 venue:
 #  group: WG
 #  type: Working Group
 #  mail: WG@example.com
 #  arch: https://example.com/WG
-  github: "dimmyvi/tigress-general-requirements"
+  github: "dimmyvi/tigress-requirements"
   latest: "https://datatracker.ietf.org/doc/draft-tigress-gssapi-impl/"
 
 author:
@@ -50,9 +53,9 @@ informative:
     -
       ins: B Lassey
       name: Brad Lassey
-    title: "Tigress general requirements"
+    title: "Tigress requirements"
     date: 2023-02
-    target: https://github.com/dimmyvi/tigress-general-requirements/
+    target: https://github.com/dimmyvi/tigress-requirements/
 
 
 --- abstract
