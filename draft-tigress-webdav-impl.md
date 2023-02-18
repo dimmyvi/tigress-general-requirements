@@ -46,9 +46,9 @@ informative:
     -
       ins: B Lassey
       name: Brad Lassey
-    title: "Tigress general requirements"
+    title: "Tigress requirements"
     date: 2023-02
-    target: https://github.com/dimmyvi/tigress-general-requirements/
+    target: https://github.com/dimmyvi/tigress-requirements/
 
 
 --- abstract
