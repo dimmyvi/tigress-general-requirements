@@ -26,7 +26,7 @@ About This Document
    https://datatracker.ietf.org/doc/draft-tigress-webdav-impl/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/dimmyvi/tigress-general-requirements.
+   https://github.com/dimmyvi/tigress-requirements.
 
 Status of This Memo
 
