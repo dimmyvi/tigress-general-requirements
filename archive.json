@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-02-16T01:02:33.796269+00:00",
+  "timestamp": "2023-02-19T01:04:04.249768+00:00",
   "repo": "dimmyvi/tigress-general-requirements",
   "labels": [
     {
@@ -343,24 +343,26 @@
       "id": "PR_kwDOIlUyos5J_E_h",
       "title": "Create gss-api-1-pager.md",
       "url": "https://github.com/dimmyvi/tigress-general-requirements/pull/2",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "castiz",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2023-02-14T22:39:36Z",
-      "updatedAt": "2023-02-15T23:14:06Z",
+      "updatedAt": "2023-02-16T17:09:44Z",
       "baseRepository": "dimmyvi/tigress-general-requirements",
       "baseRefName": "main",
       "baseRefOid": "337a8a54be1b33ca3a6f7f4ece02b1f14f65b281",
       "headRepository": "dimmyvi/tigress-general-requirements",
       "headRefName": "castiz-patch-1",
       "headRefOid": "d5efcff1086ea211b5beb1f18f89fd1f72231a0c",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-02-16T17:09:41Z",
+      "mergedAt": "2023-02-16T17:09:41Z",
+      "mergedBy": "castiz",
+      "mergeCommit": {
+        "oid": "a5ecf017b4ff66f247045715f40e166baf54ac19"
+      },
       "comments": [],
       "reviews": []
     },
@@ -369,24 +371,26 @@
       "id": "PR_kwDOIlUyos5J_FNP",
       "title": "Create webdav-1-pager.md",
       "url": "https://github.com/dimmyvi/tigress-general-requirements/pull/3",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "castiz",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2023-02-14T22:40:28Z",
-      "updatedAt": "2023-02-16T00:11:43Z",
+      "updatedAt": "2023-02-16T17:09:16Z",
       "baseRepository": "dimmyvi/tigress-general-requirements",
       "baseRefName": "main",
       "baseRefOid": "337a8a54be1b33ca3a6f7f4ece02b1f14f65b281",
       "headRepository": "dimmyvi/tigress-general-requirements",
       "headRefName": "castiz-patch-2",
       "headRefOid": "c7d410193afaea1eb6660ac2666a91851fb3840c",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-02-16T17:09:10Z",
+      "mergedAt": "2023-02-16T17:09:10Z",
+      "mergedBy": "castiz",
+      "mergeCommit": {
+        "oid": "a7175b5f0c168db480ebd1ac0f1adbc5438fbdbe"
+      },
       "comments": [
         {
           "author": "dimmyvi",
@@ -403,24 +407,26 @@
       "id": "PR_kwDOIlUyos5J_FdZ",
       "title": "Create signal-1-pager.md",
       "url": "https://github.com/dimmyvi/tigress-general-requirements/pull/4",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "castiz",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2023-02-14T22:41:33Z",
-      "updatedAt": "2023-02-15T22:57:43Z",
+      "updatedAt": "2023-02-16T17:09:32Z",
       "baseRepository": "dimmyvi/tigress-general-requirements",
       "baseRefName": "main",
       "baseRefOid": "337a8a54be1b33ca3a6f7f4ece02b1f14f65b281",
       "headRepository": "dimmyvi/tigress-general-requirements",
       "headRefName": "castiz-patch-3",
       "headRefOid": "0d99b357f1a41d555e40cc9e4880c554d3a9fb81",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-02-16T17:09:29Z",
+      "mergedAt": "2023-02-16T17:09:28Z",
+      "mergedBy": "castiz",
+      "mergeCommit": {
+        "oid": "b39d483cf4fa922dd361b260f4afed6b7f95ac7b"
+      },
       "comments": [
         {
           "author": "dimmyvi",
@@ -450,6 +456,146 @@
               "updatedAt": "2023-02-15T22:40:20Z"
             }
           ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOIlUyos5KKG4Q",
+      "title": "Added \"Req-Speed\" and \"Req-Invitation\"",
+      "url": "https://github.com/dimmyvi/tigress-general-requirements/pull/5",
+      "state": "OPEN",
+      "author": "alexpell00",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "After going over the one pagers there were some solutions that would work based on our requirements, but would not work in practice. \r\n\r\n\"Req-Speed\" - This requirement is trying to say that the communication should be fast. If an intermediary server is used we would need some form of push notifications to facilitate fast communication; as opposed to having clients poll.\r\n\r\n\"Req-Invitation\" - We have implied that a link or file is required for the receiver to be able to redeem the credential, but we don't have an actual requirement for this.",
+      "createdAt": "2023-02-16T18:52:09Z",
+      "updatedAt": "2023-02-17T23:13:55Z",
+      "baseRepository": "dimmyvi/tigress-general-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "a5ecf017b4ff66f247045715f40e166baf54ac19",
+      "headRepository": "dimmyvi/tigress-general-requirements",
+      "headRefName": "apelletier/speed+invite",
+      "headRefOid": "0f709927ffd6769945157a624bb77d79515151fb",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOIlUyos5NnGI_",
+          "commit": {
+            "abbreviatedOid": "0f70992"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-16T18:52:33Z",
+          "updatedAt": "2023-02-16T18:52:34Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "I am not sold on this wording, but I couldn't come up with anything better.",
+              "createdAt": "2023-02-16T18:52:33Z",
+              "updatedAt": "2023-02-16T18:52:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5NoPfL",
+          "commit": {
+            "abbreviatedOid": "0f70992"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-16T22:43:02Z",
+          "updatedAt": "2023-02-16T22:43:03Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "I am not quite certain that we need this. Previously folks argued these are implementation details, not requirements (per your explanation this refers to push notification to devices )",
+              "createdAt": "2023-02-16T22:43:03Z",
+              "updatedAt": "2023-02-16T22:43:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5NoPyN",
+          "commit": {
+            "abbreviatedOid": "0f70992"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-16T22:44:26Z",
+          "updatedAt": "2023-02-16T22:44:26Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "We used to have Req-Preview - which was about receiver being able to see what pass they are about to accept. I think we removed it as implementation details, not actual requirement to the protocol",
+              "createdAt": "2023-02-16T22:44:26Z",
+              "updatedAt": "2023-02-16T22:46:27Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5NtkUb",
+          "commit": {
+            "abbreviatedOid": "0f70992"
+          },
+          "author": "alexpell00",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-17T16:43:39Z",
+          "updatedAt": "2023-02-17T16:43:39Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "I think the push notifications as a solution is an implementation detail, but the requirement for it to be fast could be a general requirement.",
+              "createdAt": "2023-02-17T16:43:39Z",
+              "updatedAt": "2023-02-17T16:43:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5NvgSr",
+          "commit": {
+            "abbreviatedOid": "0f70992"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-02-17T23:07:47Z",
+          "updatedAt": "2023-02-17T23:07:47Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "You could incorporate this with the X-Platform requirement saying the transfer and invite should be able to occur on any platform and any communication channel.\r\n\r\nI think the intention here is slightly different than the Req-Preview if I understand correctly.",
+              "createdAt": "2023-02-17T23:07:47Z",
+              "updatedAt": "2023-02-17T23:07:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOIlUyos5NvhCH",
+          "commit": {
+            "abbreviatedOid": "0f70992"
+          },
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-02-17T23:13:55Z",
+          "updatedAt": "2023-02-17T23:13:55Z",
+          "comments": []
         }
       ]
     }
