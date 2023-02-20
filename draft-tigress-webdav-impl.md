@@ -15,10 +15,10 @@ keyword:
  - sample-implementation
  - WebDAV
 venue:
-#  group: WG
-#  type: Working Group
-#  mail: WG@example.com
-#  arch: https://example.com/WG
+  group: "Transfer dIGital cREdentialS Securely"
+  type: "Working Group"
+  mail: "tigress@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/tigress/"
   github: "dimmyvi/tigress-requirements"
   latest: "https://datatracker.ietf.org/doc/draft-tigress-webdav-impl/"
 
