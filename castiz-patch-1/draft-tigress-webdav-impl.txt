@@ -1,0 +1,210 @@
+
+
+
+
+Transfer dIGital cREdentialS Securely                           C. Astiz
+Internet-Draft                                                 Apple Inc
+Intended status: Informational                          22 February 2023
+Expires: 26 August 2023
+
+
+                  Tigress-WebDAV-Sample Implementation
+                    draft-tigress-webdav-impl-latest
+
+Abstract
+
+   This document describes a sample implementation of transferring
+   digital credentials securily (Tigress) using WebDAV protocol.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at
+   https://datatracker.ietf.org/doc/draft-tigress-webdav-impl/.  Status
+   information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-tigress-webdav-impl/.
+
+   Discussion of this document takes place on the Transfer dIGital
+   cREdentialS Securely Working Group mailing list
+   (mailto:tigress@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/tigress/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/tigress/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/dimmyvi/tigress-requirements.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 26 August 2023.
+
+Copyright Notice
+
+   Copyright (c) 2023 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Conventions and Definitions
+   3.  WebDAV Protocol Sample Implementation
+   4.  Security Considerations
+   5.  IANA Considerations
+   6.  References
+     6.1.  Normative References
+     6.2.  Informative References
+   Acknowledgments
+   Author's Address
+
+1.  Introduction
+
+   Prevously Tigress reviewed an implementation of digital credentials
+   transfer using Tigress protocol (https://datatracker.ietf.org/doc/
+   draft-art-tigress/).  In previous IETF meetings community asked to
+   review other possible solutions using alternative standards to
+   illustrate how Tigress problem can be solved differently.  In this
+   document we are trying to describe how an alternative potential
+   implementation of a solution to Tigress [Tigress-req-02] problem of
+   transferring digital credentials securily can be done using WebDAV
+   Protocol [RFC4918].
+
+2.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+3.  WebDAV Protocol Sample Implementation
+
+   WebDAV (Web Distributed Authoring and Versioning) [RFC4918] is a
+   protocol that allows users to edit and manage files on remote web
+   servers.  It extends the HTTP protocol, adding functionality for
+   creating, editing, and moving files and directories on a remote
+   server.  The protocol is defined in [RFC4918], "HTTP Extensions for
+   Web Distributed Authoring and Versioning (WebDAV)".  Since the core
+   of transferring secure credentials is to allow a data blob to pass
+   between two users, we can leverage the WebDAV protocol to create the
+   secure communication channel between sender and receiver.
+
+   ## Secure Credential Transfer with WebDAV:
+
+   For Secure Credential Transfer [Tigress-req-02] with WebDAV, the
+   implementing party will host a remote WebDAV server that mobile
+   devices can interact with.  This will act as an intermediary between
+   the sender and receiver device to create a safe communication
+   channel.
+
+   There are two different workflows for transferring of digital
+   credentials.  Refer to Credential Transfer Workflows in Secure
+   Credential Transfer Draft: https://github.com/dimmyvi/secure-
+   credential-transfer/blob/main/draft-secure-credential-
+   transfer.md#credential-transfer-workflows.  For the stateless flow,
+   the sender device will upload a file with the provisioning
+   information required for the receiver to redeem the pass using HTTP
+   PUT.  Because this is the final state this resource will be in, the
+   sender will also perform a HTTP LOCK on the resource.
+
+   The sender will then send the link to the remote server with the
+   resource to the receiving device over any communication channel
+   available to them.  The URI for the resource will follow this format:
+   “https://{RelayServerHost}/v{ApiVersion}/{ShareIdentifier}/share.json
+   ”. The WebDAV server implementor shall choose the ShareIdentifier for
+   each resource to ensure there are no duplicates.
+
+   Once the receiver has the link, they are able to access the resource
+   with HTTP GET.  Optionally, the implementor can incorporate OpenGraph
+   metadata into the response of the GET request so users have a preview
+   of what they are accepting.  At this point, the receiver device can
+   optionally call HTTP DELETE to remove the resource from the WebDAV
+   server.
+
+   For the stateful use case, there is a requirement for multiple round
+   trips between devices.  In this case, both the sender and receiver
+   will be reading resources with HTTP GET and putting a new or modified
+   resource onto the WebDAV server with HTTP PUT.  Once the receiver has
+   redeemed, they can optionally call HTTP DELETE.
+
+   In either case, the WebDAV remote server should clean up any
+   remaining resources after a short period, such as 24 hours for
+   example.
+
+   Continue to use the same structure as defined here:
+   https://github.com/dimmyvi/secure-credential-transfer/blob/main/
+   draft-secure-credential-transfer.md#provisioning-information-
+   structure.  Both users must implement WebDAV in order to share and
+   receive keys.  As noted in the other solutions, WebDAV will only be
+   used to share the data that is necessary and sufficient to redeem the
+   key.  Once the data is obtained by the receiver, it is up to the
+   device OEM or other implementor to redeem that key with the
+   credential authority.  If push notifications are required for the use
+   case, the implementor can extend the WebDAV intermediary server to
+   incorporate push notifications to the sender and receiver devices.
+   Push notifications or similar "notify" operations are not supported
+   out of the box with WebDAV.
+
+4.  Security Considerations
+
+   TODO Security
+
+5.  IANA Considerations
+
+   This document has no IANA actions.
+
+6.  References
+
+6.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC4918]  Dusseault, L., Ed., "HTTP Extensions for Web Distributed
+              Authoring and Versioning (WebDAV)", RFC 4918,
+              DOI 10.17487/RFC4918, June 2007,
+              <https://www.rfc-editor.org/rfc/rfc4918>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+6.2.  Informative References
+
+   [Tigress-req-02]
+              Vinokurov, D., Pelletier, A., Astiz, C., and B. Lassey,
+              "Tigress requirements", February 2023,
+              <https://github.com/dimmyvi/tigress-requirements/>.
+
+Acknowledgments
+
+   TODO acknowledge.
+
+Author's Address
+
+   Casey Astiz
+   Apple Inc
+   Email: castiz@apple.com

@@ -4,20 +4,19 @@
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>Transfer Digital Credentials Securely - General Requirements</title>
-<meta content="Dmitry Vinokurov" name="author">
+<title>Tigress-WebDAV-Sample Implementation</title>
 <meta content="Casey Astiz" name="author">
-<meta content="Alex Pelletier" name="author">
-<meta content="Brad Lassey" name="author">
 <meta content="
-       This document describes the use cases necessitating the secure transfer of digital credentials, residing in a digital wallet, between two devices and defines general assumptions, requirements and the scope for possible solutions to this problem. 
+       This document describes a sample implementation of transferring digital credentials securily (Tigress) using WebDAV protocol. 
     " name="description">
 <meta content="xml2rfc 3.16.0" name="generator">
-<meta content="Internet-Draft" name="keyword">
-<meta content="draft-tigress-general-requirements-latest" name="ietf.draft">
+<meta content="tigress" name="keyword">
+<meta content="sample-implementation" name="keyword">
+<meta content="WebDAV" name="keyword">
+<meta content="draft-tigress-webdav-impl-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.16.0
-    Python 3.10.9
+    Python 3.10.10
     appdirs 1.4.4
     ConfigArgParse 1.5.3
     google-i18n-address 2.5.2
@@ -33,7 +32,7 @@
     six 1.16.0
     wcwidth 0.2.6
 -->
-<link href="draft-tigress-general-requirements.xml" rel="alternate" type="application/rfc+xml">
+<link href="draft-tigress-webdav-impl.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
 <style type="text/css">@font-face {
   font-family: 'Lora';
@@ -362,7 +361,7 @@ ul.empty li, .ulEmpty li {
   margin-top: 0.5em;
 }
 :is(ul, ol).compact, .ulCompact, .olCompact {
-  line-height: 100%;
+  line-height: 1;
   margin: 0 0 0 2em;
 }
 
@@ -372,9 +371,12 @@ dl {
   --indent: 3ch;
   /* --indent: attr(indent ch); not supported in any browser, but we can dream */
 }
+dl.olPercent {
+  --indent: 5ch;
+}
 dl > dt {
   float: left;
-  margin-right: 1em;
+  margin-right: 2ch;
   min-width: 8ch;
 }
 dl.dlNewline > dt {
@@ -384,6 +386,9 @@ dl > dd {
   margin-bottom: .8em;
   margin-left: var(--indent) !important; /* stupid element overrides */
   min-height: 2ex;
+}
+dl.olPercent > dt {
+  min-width: calc(var(--indent) - 2ch);
 }
 :is(dl.compact, .dlCompact) > dd {
   margin-bottom: 0;
@@ -584,10 +589,14 @@ hr {
 .bcp14 {
   font-variant: small-caps;
   font-weight: 600;
-  font-size: 14.5px;
+  font-size: var(--small-font-size);
 }
 .role {
   font-variant: all-small-caps;
+}
+sub, sup {
+  line-height: 1;
+  font-size: 80%;
 }
 
 /* info block */
@@ -1039,12 +1048,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <table class="ears">
 <thead><tr>
 <td class="left">Internet-Draft</td>
-<td class="center">tigress-general-requirements</td>
+<td class="center">Tigress-WebDAV-Sample Implementation</td>
 <td class="right">February 2023</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Vinokurov, et al.</td>
-<td class="center">Expires 19 August 2023</td>
+<td class="left">Astiz</td>
+<td class="center">Expires 26 August 2023</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1052,42 +1061,30 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <div id="internal-metadata" class="document-information">
 <dl id="identifiers">
 <dt class="label-workgroup">Workgroup:</dt>
-<dd class="workgroup">TIGRESS</dd>
+<dd class="workgroup">Transfer dIGital cREdentialS Securely</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-tigress-general-requirements-latest</dd>
+<dd class="internet-draft">draft-tigress-webdav-impl-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-02-15" class="published">15 February 2023</time>
+<time datetime="2023-02-22" class="published">22 February 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2023-08-19">19 August 2023</time></dd>
-<dt class="label-authors">Authors:</dt>
+<dd class="expires"><time datetime="2023-08-26">26 August 2023</time></dd>
+<dt class="label-authors">Author:</dt>
 <dd class="authors">
-<div class="author">
-      <div class="author-name">D. Vinokurov</div>
-<div class="org">Apple Inc</div>
-</div>
 <div class="author">
       <div class="author-name">C. Astiz</div>
 <div class="org">Apple Inc</div>
 </div>
-<div class="author">
-      <div class="author-name">A. Pelletier</div>
-<div class="org">Apple Inc</div>
-</div>
-<div class="author">
-      <div class="author-name">B. Lassey</div>
-<div class="org">Alphabet Inc</div>
-</div>
 </dd>
 </dl>
 </div>
-<h1 id="title">Transfer Digital Credentials Securely - General Requirements</h1>
+<h1 id="title">Tigress-WebDAV-Sample Implementation</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document describes the use cases necessitating the secure transfer of digital credentials, residing in a digital wallet, between two devices and defines general assumptions, requirements and the scope for possible solutions to this problem.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document describes a sample implementation of transferring digital credentials securily (Tigress) using WebDAV protocol.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1095,10 +1092,15 @@ svg :is([fill="white"], [fill^="#fff"]) {
       </h2>
 <p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
 <p id="section-note.1-2">
-        The latest revision of this draft can be found at <span><a href="https://datatracker.ietf.org/doc/draft-tigress-general-requirements/">https://datatracker.ietf.org/doc/draft-tigress-general-requirements/</a></span>.
-        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-tigress-general-requirements/">https://datatracker.ietf.org/doc/draft-tigress-general-requirements/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
-<p id="section-note.1-3">Source for this draft and an issue tracker can be found at
-        <span><a href="https://github.com/dimmyvi/tigress-general-requirements">https://github.com/dimmyvi/tigress-general-requirements</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
+        The latest revision of this draft can be found at <span><a href="https://datatracker.ietf.org/doc/draft-tigress-webdav-impl/">https://datatracker.ietf.org/doc/draft-tigress-webdav-impl/</a></span>.
+        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-tigress-webdav-impl/">https://datatracker.ietf.org/doc/draft-tigress-webdav-impl/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+<p id="section-note.1-3">
+        Discussion of this document takes place on the
+        Transfer dIGital cREdentialS Securely Working Group mailing list (<span><a href="mailto:tigress@ietf.org">mailto:tigress@ietf.org</a></span>),
+        which is archived at <span><a href="https://mailarchive.ietf.org/arch/browse/tigress/">https://mailarchive.ietf.org/arch/browse/tigress/</a></span>.
+        Subscribe at <span><a href="https://www.ietf.org/mailman/listinfo/tigress/">https://www.ietf.org/mailman/listinfo/tigress/</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
+<p id="section-note.1-4">Source for this draft and an issue tracker can be found at
+        <span><a href="https://github.com/dimmyvi/tigress-requirements">https://github.com/dimmyvi/tigress-requirements</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1119,7 +1121,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 19 August 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 26 August 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1152,58 +1154,33 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-general-setting" class="internal xref">General Setting</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.1">
-                <p id="section-toc.1-1.2.2.1.1" class="keepWithNext"><a href="#section-2.1" class="auto internal xref">2.1</a>.  <a href="#name-credential-transfer-without" class="internal xref">Credential transfer without Provisioning Partner</a></p>
-</li>
-            </ul>
+            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
+            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-webdav-protocol-sample-impl" class="internal xref">WebDAV Protocol Sample Implementation</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
-            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-use-cases" class="internal xref">Use Cases</a></p>
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
-            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-relationships" class="internal xref">Relationships</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
-                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-credential-transfer-with-in" class="internal xref">Credential transfer with intermediary server</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
-                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-credential-transfer-without-" class="internal xref">Credential transfer without intermediary</a></p>
-</li>
-            </ul>
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-assumptions" class="internal xref">Assumptions</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-requirements" class="internal xref">Requirements</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-references" class="internal xref">References</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-references" class="internal xref">References</a></p>
 <ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.1">
-                <p id="section-toc.1-1.10.2.1.1"><a href="#section-10.1" class="auto internal xref">10.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1">
+                <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="auto internal xref">6.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.2">
-                <p id="section-toc.1-1.10.2.2.1"><a href="#section-10.2" class="auto internal xref">10.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.2">
+                <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="auto internal xref">6.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
+            <p id="section-toc.1-1.7.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
 </li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
-            <p id="section-toc.1-1.12.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
 </li>
         </ul>
 </nav>
@@ -1214,218 +1191,70 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">In this document we are identifying a problem of transferring digital credentials (e.g. a digital car key, a digital key a a hotel room or a digital key to a private house) from a wallet on one device (smartphone) to another, particularly, if these devices belong to two different platforms (e.g. one is iOS, another - Android).
-Today, there is no widely accepted way of transferring digital credentials securely between two digital wallets independent of hardware and software manufacturer. This document describes the problem space and the requirements for the solution the working group creates.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">A Working Group, called Tigress has been established to find a solution to the problem described above.
-Within the WG an initial solution was presented (https://datatracker.ietf.org/doc/draft-art-tigress). The community decided to generalize the requirements to the solution and consider alternative solutions within the WG.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">This document presents the general requirements to possible solutions and  specifies certain privacy requirements in order to maintain a high level of user privacy.<a href="#section-1-3" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="general-setting">
-<section id="section-2">
-      <h2 id="name-general-setting">
-<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-general-setting" class="section-name selfRef">General Setting</a>
-      </h2>
-<p id="section-2-1">When sharing digital secure credentials, there are several actors involved. This document will focus on sharing information between two digital wallets, directly or through an intermediary server.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">Digital credentials provide access to property owned and / or operated by 3-rd party entities, such as hotel or residential building owners. The entity that is providing the digital credential for consumption by a digital wallet are referred to as Provisioning Partners.
-For some kind of credentials Provisioning Partner require to have control over digital credential issuance and life time management - for example, hotel is the owner of the rooms and allow guests to access them for the time of thier stay only.<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">Digital wallet is a combination of software and hardware in a smartphone device, there are two devices involved in credentail transfer process - Sender and Receiver. They are defined in terms of which one is a transfer initiator (Sender) and which device is eventually consuming transferred credentials (Receiver). Device roles can change based on the transfer direction - in some transfers a device can act as a Sender, in other - as a Receiver.<a href="#section-2-3" class="pilcrow">¶</a></p>
-<p id="section-2-4">The interface between the device and the Provisioning Partner can be proprietary or a part of published specifications. The sender wallet obtains provisioning information from the Provisioning Partner, then shares it to the recipient using a solution defined in Tigress WG. The recipient then takes that provisioning information and sends it to the Provisioning Partner to redeem for credential for consumption in a digital wallet.<a href="#section-2-4" class="pilcrow">¶</a></p>
-<p id="section-2-5">For some credential types the Provisioning Partner who issues new credentials is actually the sender wallet. In that scenario the receiver will generate a new key material at the request of the sender, and then communicate with the sender over Tigress to have its key material signed by the sender. New credential, with the key material generated by receiver device and signed by sender device, will finally be added (provisioned) into a digital wallet on sender device.<a href="#section-2-5" class="pilcrow">¶</a></p>
-<div id="credential-transfer-without-provisioning-partner">
-<section id="section-2.1">
-        <h3 id="name-credential-transfer-without">
-<a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-credential-transfer-without" class="section-name selfRef">Credential transfer without Provisioning Partner</a>
-        </h3>
-<p id="section-2.1-1"><code>mermaid
-sequenceDiagram
-    actor S as Sender
-    participant I as Intermediary
-    actor R as Receiver
-    S -&gt;&gt; I : upload Sharing Invititation ({{CCC-Digital-Key-30}})
-    break Generic messaging channel
-      S -&gt;&gt; R : send invite
-    end
-    break Credential Provisioning flow {{CCC-Digital-Key-30}}
-      R -&gt;&gt; I : upload Key Signing Request ({{CCC-Digital-Key-30}})
-      S -&gt;&gt; I : read Key Signing Request, generate and upload Key Import Request ({{CCC-Digital-Key-30}})
-      R -&gt;&gt; I : read Key Import Request and Import Key Data ({{CCC-Digital-Key-30}})
-    end
-</code><a href="#section-2.1-1" class="pilcrow">¶</a></p>
-</section>
-</div>
+<p id="section-1-1">Prevously Tigress reviewed an implementation of digital credentials transfer using Tigress protocol (https://datatracker.ietf.org/doc/draft-art-tigress/). In previous IETF meetings community asked to review other possible solutions using alternative standards to illustrate how Tigress problem can be solved differently.
+In this document we are trying to describe how an alternative potential implementation of a solution to Tigress <span>[<a href="#Tigress-req-02" class="cite xref">Tigress-req-02</a>]</span> problem of transferring digital
+credentials securily can be done using WebDAV Protocol <span>[<a href="#RFC4918" class="cite xref">RFC4918</a>]</span>.<a href="#section-1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
-<section id="section-3">
+<section id="section-2">
       <h2 id="name-conventions-and-definitions">
-<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-conventions-and-definitions" class="section-name selfRef">Conventions and Definitions</a>
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-conventions-and-definitions" class="section-name selfRef">Conventions and Definitions</a>
       </h2>
-<p id="section-3-1">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
+<p id="section-2-1">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
 "<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
 described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they
-appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶</a></p>
-<p id="section-3-2">General terms:<a href="#section-3-2" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-3-3.1">Credential information - data used to authenticate the user with an access point.<a href="#section-3-3.1" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-3-3.2">Provisioning information - data transferred from Sender to Receiver device that is both necessary and sufficient for the Receiver to request a new credential from Provisioning Partner to provision it to the Receiver device.<a href="#section-3-3.2" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-3-3.3">Provisioning - A process of adding a new credential to the device.<a href="#section-3-3.3" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-3-3.4">Provisioning Partner - an entity which facilitates Credential Information lifecycle on a device - for some types of access credentials (e.g. hotels, corporate access). Lifecycle may include provisioning of credential, credential termination, credential update.<a href="#section-3-3.4" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-3-3.5">Sender (device) - a device initiating a transfer of Provisioning Information to a Receiver that can provision this credential.<a href="#section-3-3.5" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-3-3.6">Receiver (device) - a device that receives Provisioning Information and uses it to provision a new credential.<a href="#section-3-3.6" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-3-3.7">Intermediary (server) - an optional intermediary server that provides a standardized and platform-independent way of transferring provisioning information between Sender and Receiver devices, acting as a temporary store and forward service between Sender and Receiver.<a href="#section-3-3.7" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-3-3.8">Digital Wallet - A device, service, and/or software that faciliates transactions either online or in-person via a technology like NFC. Digital Wallet's typically support payments, drivers licenses, loyalty cards, access credentials and more.<a href="#section-3-3.8" class="pilcrow">¶</a>
-</li>
-      </ul>
+appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="use-cases">
-<section id="section-4">
-      <h2 id="name-use-cases">
-<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-use-cases" class="section-name selfRef">Use Cases</a>
+<div id="webdav-protocol-sample-implementation">
+<section id="section-3">
+      <h2 id="name-webdav-protocol-sample-impl">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-webdav-protocol-sample-impl" class="section-name selfRef">WebDAV Protocol Sample Implementation</a>
       </h2>
-<ul class="normal">
-<li class="normal" id="section-4-1.1">Let's say Ben owns a vehicle that supports digital car keys. Ben would like to let Ryan borrow the car for the weekend. Ryan and Ben are using two different devices (smartphones) with different operating systems. In order for Ben to share his digital car key to Ryan for a weekend, he must transfer some data to the receiver device. Receiver device generates new key material and return it to the sender to sign and return back to the receiver. At this point, the receiver now has a token that will allow them to provision their new key with the car.<a href="#section-4-1.1" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-4-1.2">Bob booked a room at a hotel for the weekend, but will be arriving late at night. Alice, his partner, comes to the hotel first, so Bob wants to share his digital room key with Alice. Bob and Alice are using two different mobile phones with different operating systems. In order for Bob to share his digital room key to Alice for a weekend, he must transfer some data to her device. The data structure shared between the two participants is proprietary to the given hotel chain (or Provisioning Partner). This data transfer is a one-time, unidirectional transfer from Bob's device to Alice's. Once Alice receives this data, she can provision a new key to her digital wallet, making a call to Provisioning Partner to receive new credential information.<a href="#section-4-1.2" class="pilcrow">¶</a>
-</li>
-      </ul>
-</section>
-</div>
-<div id="relationships">
-<section id="section-5">
-      <h2 id="name-relationships">
-<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-relationships" class="section-name selfRef">Relationships</a>
-      </h2>
-<div id="credential-transfer-with-intermediary-server">
-<section id="section-5.1">
-        <h3 id="name-credential-transfer-with-in">
-<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-credential-transfer-with-in" class="section-name selfRef">Credential transfer with intermediary server</a>
-        </h3>
-<p id="section-5.1-1"><code>mermaid
-sequenceDiagram
-    actor S as Sender
-    participant I as Intermediary
-    actor R as Receiver
-    S -&gt;&gt; I : upload provisioning information
-    break Generic messaging channel
-      S -&gt;&gt; R : send invite
-    end
-    loop Provision credential
-      R -&gt;&gt; I : request additional provisioning information
-      I -&gt;&gt; R : deliver additional provisioning information
-    end
-</code><a href="#section-5.1-1" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="credential-transfer-without-intermediary">
-<section id="section-5.2">
-        <h3 id="name-credential-transfer-without-">
-<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-credential-transfer-without-" class="section-name selfRef">Credential transfer without intermediary</a>
-        </h3>
-<p id="section-5.2-1"><code>mermaid
-sequenceDiagram
-    actor S as Sender
-    actor R as Receiver
-    break secure messaging channel
-      S -&gt;&gt; R : transfer provisioning information E2E
-    end
-    loop Provision credential
-      R -&gt;&gt; S : request additional provisioning information
-      S -&gt;&gt; R : deliver additional provisioning information
-    end
-</code><a href="#section-5.2-1" class="pilcrow">¶</a></p>
-</section>
-</div>
-</section>
-</div>
-<div id="assumptions">
-<section id="section-6">
-      <h2 id="name-assumptions">
-<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-assumptions" class="section-name selfRef">Assumptions</a>
-      </h2>
-<ul class="normal">
-<li class="normal" id="section-6-1.1">Depending on credential type, original credential information (with cryptographic key material) needs not to be sent. Instead, sender will be transferring its approval token for Receiver to acquire new credential information (e.g. receiver device may have just a subset of the sender's device access rights or receiver's device credential may be revoked independently of the sender's device credential).<a href="#section-6-1.1" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-6-1.2">Depending on credential type, Provisioning Partner will not allow for two users to use the same credential / cryptographic keys. Credentials on sender and receiver devices will be different and managed independently.<a href="#section-6-1.2" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-6-1.3">Security: Communication between sender or receiver devices and Provisioning Partner should be trusted. Since new credential's key material is generated by Provisioning Partner, the channel between the device and Provisioning Provider shall be secure and trusted by both parties.<a href="#section-6-1.3" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-6-1.4">In case of an intermediary server, used during the credential transfer from sender device to receiver device, the choice of intermediary shall be defined by the application initiating the credential transfer. Digital wallet or another application that manages credentials on sender device shall make the decision regarding the channel to be used to sent the Provisioning Information.<a href="#section-6-1.4" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-6-1.5">Sender and Receiver shall both be able to manage the shared credential at any point in transfer or lifecycle: a) the process of credential transfer can be stopped at any time before the credential is provisioned to the receiver device by either sender or receiver device (e.g. making a call to intermediate server to delete a temporary mailbox); b) or after credential has been provisioned - by ether "manage credential" call issued from sender device to Provisiong Partner (or from Provisiong Partner initiating "manage credential" API).<a href="#section-6-1.5" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-6-1.6">Any device OEM with a digital credential implementation adherent to Tigress solution shall be able to receive shared provisioning information, whether or not they can originate provisioning information themselves. We define the digital credential transfer as platform-independant; therefore, if the receiver device can recognize the data format of the received Provisioning Information, it should be able to provision the new credential to the Digital Wallet.<a href="#section-6-1.6" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-6-1.7">Provisioning new credential on the receiver may require multiple round trips. In case the Provisioning Partner is not used for a certain type of credentials (e.g. for a transfer of a digital car key), both sender and receiver devices are used to generate new credential's cryptographic key matherial and sign on the new cryptographic key for it to be trusted by the access point.<a href="#section-6-1.7" class="pilcrow">¶</a>
-</li>
-      </ul>
-</section>
-</div>
-<div id="requirements">
-<section id="section-7">
-      <h2 id="name-requirements">
-<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-requirements" class="section-name selfRef">Requirements</a>
-      </h2>
-<ul class="normal">
-<li class="normal" id="section-7-1.1">(Req-XPlatform) Solution shall support transfer of digital credential across different platforms (e.g. from Android to iOS).<a href="#section-7-1.1" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-7-1.2">(Req-P2P) A goal of credential transfer covered in this document shall include transfer from one device to another (group sharing shall not be a goal).<a href="#section-7-1.2" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-7-1.3">(Req-CredentialType) The solution shall support transfer of various digital credential types, based on symmetric and asymmetric cryptography, public and proprietary standards.<a href="#section-7-1.3" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-7-1.4">(Req-Security) Solution should provide security of the provisioning data transferred (confidentiality, integrity and availability of provisioning information in transit).<a href="#section-7-1.4" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-7-1.5">(Req-Privacy) Transport protocol used to transfer provisioning information ( e.g. secure E2E transfer protocol or intermediary server) shall prevent from correlating users between exchanges or create a social graph of users involved into transfer. Intermediary server shall not be an arbiter of identity. User identities shall not be collected, stored and used for purpose other then the credential transfer itself.<a href="#section-7-1.5" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-7-1.6">(Req-Connectivity) Sender and Receiver shall be allowed to be online at different times. Sender and Receiver shall not need to be online at the same time. This requirement allows devices to connect to network to only exchange the portion of information required during the transfer, allowing them upload or download data in turns to network servers.<a href="#section-7-1.6" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-7-1.7">(Req-RoundTrips) Solution shall allow for multiple data exchanges between sender and receiver devices in the process of credential transfer. This requirement shall alighn with (Req-Connectivity) above.<a href="#section-7-1.7" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-7-1.8">(Req-Opaque) In the case when an intermediary server is used to facilitate the credential transfer, message content between sender and receiver must be opaque to an intermediary, intermediary server shall not be able to recognize the content of provisioning information or use it to provision digital credential on its own.<a href="#section-7-1.8" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-7-1.9">(Req-SenderTrust) In the case when an intermediary server is used to facilitate the credential transfer, sender device should establish trusted relationship with the intermediary server. Intermediary server shall be able to verify that the sender device is in good standing and content generated by the sender device can be trusted by the intermediary. The trust mechanism could be proprietary or publicly verifiable ( e.g. WebAuthN). This is important because intermediary server shall have no visibility to the content of the provisiong information sent through it (Req-Opaque).<a href="#section-7-1.9" class="pilcrow">¶</a>
-</li>
-        <li class="normal" id="section-7-1.10">(Req-ReceiverTrust) In the case when an intermediary server is used to facilitate the credential transfer, receiver device should be able to evaluate the trustworthiness of the intermediary based on agreed criteria.<a href="#section-7-1.10" class="pilcrow">¶</a>
-</li>
-      </ul>
+<p id="section-3-1">WebDAV (Web Distributed Authoring and Versioning)  <span>[<a href="#RFC4918" class="cite xref">RFC4918</a>]</span> is a protocol that allows users to edit and manage files on remote web servers. It extends the HTTP protocol, adding functionality for creating, editing, and moving files and directories on a remote server. The protocol is defined in <span>[<a href="#RFC4918" class="cite xref">RFC4918</a>]</span>, "HTTP Extensions for Web Distributed Authoring and Versioning (WebDAV)". Since the core of transferring secure credentials is to allow a data blob to pass between two users, we can leverage the WebDAV protocol to create the secure communication channel between sender and receiver.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">## Secure Credential Transfer with WebDAV:<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-3">For Secure Credential Transfer <span>[<a href="#Tigress-req-02" class="cite xref">Tigress-req-02</a>]</span> with WebDAV, the implementing party will host a remote WebDAV server that mobile devices can interact with. This will act as an intermediary between the sender and receiver device to create a safe communication channel.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<p id="section-3-4">There are two different workflows for transferring of digital credentials. Refer to Credential Transfer Workflows in Secure Credential Transfer Draft: https://github.com/dimmyvi/secure-credential-transfer/blob/main/draft-secure-credential-transfer.md#credential-transfer-workflows. For the stateless flow, the sender device will upload a file with the provisioning information required for the receiver to redeem the pass using HTTP PUT. Because this is the final state this resource will be in, the sender will also perform a HTTP LOCK on the resource.<a href="#section-3-4" class="pilcrow">¶</a></p>
+<p id="section-3-5">The sender will then send the link to the remote server with the resource to the receiving device over any communication channel available to them. The URI for the resource will follow this format: “https://{RelayServerHost}/v{ApiVersion}/{ShareIdentifier}/share.json”. The WebDAV server implementor shall choose the ShareIdentifier for each resource to ensure there are no duplicates.<a href="#section-3-5" class="pilcrow">¶</a></p>
+<p id="section-3-6">Once the receiver has the link, they are able to access the resource with HTTP GET. Optionally, the implementor can incorporate OpenGraph metadata into the response of the GET request so users have a preview of what they are accepting. At this point, the receiver device can optionally call HTTP DELETE to remove the resource from the WebDAV server.<a href="#section-3-6" class="pilcrow">¶</a></p>
+<p id="section-3-7">For the stateful use case, there is a requirement for multiple round trips between devices. In this case, both the sender and receiver will be reading resources with HTTP GET and putting a new or modified resource onto the WebDAV server with HTTP PUT. Once the receiver has redeemed, they can optionally call HTTP DELETE.<a href="#section-3-7" class="pilcrow">¶</a></p>
+<p id="section-3-8">In either case, the WebDAV remote server should clean up any remaining resources after a short period, such as 24 hours for example.<a href="#section-3-8" class="pilcrow">¶</a></p>
+<p id="section-3-9">Continue to use the same structure as defined here: https://github.com/dimmyvi/secure-credential-transfer/blob/main/draft-secure-credential-transfer.md#provisioning-information-structure. Both users must implement WebDAV in order to share and receive keys. As noted in the other solutions, WebDAV will only be used to share the data that is necessary and sufficient to redeem the key. Once the data is obtained by the receiver, it is up to the device OEM or other implementor to redeem that key with the credential authority. If push notifications are required for the use case, the implementor can extend the WebDAV intermediary server to incorporate push notifications to the sender and receiver devices. Push notifications or similar "notify" operations are not supported out of the box with WebDAV.<a href="#section-3-9" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
-<section id="section-8">
+<section id="section-4">
       <h2 id="name-security-considerations">
-<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-8-1">TODO Security<a href="#section-8-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">TODO Security<a href="#section-4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
-<section id="section-9">
+<section id="section-5">
       <h2 id="name-iana-considerations">
-<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-9-1">This document has no IANA actions.<a href="#section-9-1" class="pilcrow">¶</a></p>
+<p id="section-5-1">This document has no IANA actions.<a href="#section-5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<section id="section-10">
+<section id="section-6">
       <h2 id="name-references">
-<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-references" class="section-name selfRef">References</a>
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
-<section id="section-10.1">
+<section id="section-6.1">
         <h3 id="name-normative-references">
-<a href="#section-10.1" class="section-number selfRef">10.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
 <dt id="RFC2119">[RFC2119]</dt>
         <dd>
 <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC4918">[RFC4918]</dt>
+        <dd>
+<span class="refAuthor">Dusseault, L., Ed.</span>, <span class="refTitle">"HTTP Extensions for Web Distributed Authoring and Versioning (WebDAV)"</span>, <span class="seriesInfo">RFC 4918</span>, <span class="seriesInfo">DOI 10.17487/RFC4918</span>, <time datetime="2007-06" class="refDate">June 2007</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4918">https://www.rfc-editor.org/rfc/rfc4918</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8174">[RFC8174]</dt>
       <dd>
@@ -1433,14 +1262,14 @@ sequenceDiagram
 <dd class="break"></dd>
 </dl>
 </section>
-<section id="section-10.2">
+<section id="section-6.2">
         <h3 id="name-informative-references">
-<a href="#section-10.2" class="section-number selfRef">10.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
-<dt id="CCC-Digital-Key-30">[CCC-Digital-Key-30]</dt>
+<dt id="Tigress-req-02">[Tigress-req-02]</dt>
       <dd>
-<span class="refAuthor">Car Connectivity Consortium</span>, <span class="refTitle">"Digital Key Release 3"</span>, <time datetime="2022-07" class="refDate">July 2022</time>, <span>&lt;<a href="https://carconnectivity.org/download-digital-key-3-specification/">https://carconnectivity.org/download-digital-key-3-specification/</a>&gt;</span>. </dd>
+<span class="refAuthor">Vinokurov, D.</span>, <span class="refAuthor">Pelletier, A.</span>, <span class="refAuthor">Astiz, C.</span>, and <span class="refAuthor">B. Lassey</span>, <span class="refTitle">"Tigress requirements"</span>, <time datetime="2023-02" class="refDate">February 2023</time>, <span>&lt;<a href="https://github.com/dimmyvi/tigress-requirements/">https://github.com/dimmyvi/tigress-requirements/</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1455,39 +1284,15 @@ sequenceDiagram
 </div>
 <div id="authors-addresses">
 <section id="appendix-B">
-      <h2 id="name-authors-addresses">
-<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
+      <h2 id="name-authors-address">
+<a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
       </h2>
-<address class="vcard">
-        <div dir="auto" class="left"><span class="fn nameRole">Dmitry Vinokurov</span></div>
-<div dir="auto" class="left"><span class="org">Apple Inc</span></div>
-<div class="email">
-<span>Email:</span>
-<a href="mailto:dvinokurov@apple.com" class="email">dvinokurov@apple.com</a>
-</div>
-</address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Casey Astiz</span></div>
 <div dir="auto" class="left"><span class="org">Apple Inc</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:castiz@apple.com" class="email">castiz@apple.com</a>
-</div>
-</address>
-<address class="vcard">
-        <div dir="auto" class="left"><span class="fn nameRole">Alex Pelletier</span></div>
-<div dir="auto" class="left"><span class="org">Apple Inc</span></div>
-<div class="email">
-<span>Email:</span>
-<a href="mailto:a_pelletier@apple.com" class="email">a_pelletier@apple.com</a>
-</div>
-</address>
-<address class="vcard">
-        <div dir="auto" class="left"><span class="fn nameRole">Brad Lassey</span></div>
-<div dir="auto" class="left"><span class="org">Alphabet Inc</span></div>
-<div class="email">
-<span>Email:</span>
-<a href="mailto:lassey@google.com" class="email">lassey@google.com</a>
 </div>
 </address>
 </section>
