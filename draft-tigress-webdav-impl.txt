@@ -4,8 +4,8 @@
 
 Transfer dIGital cREdentialS Securely                           C. Astiz
 Internet-Draft                                                 Apple Inc
-Intended status: Informational                          20 February 2023
-Expires: 24 August 2023
+Intended status: Informational                          23 February 2023
+Expires: 27 August 2023
 
 
                   Tigress-WebDAV-Sample Implementation
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 August 2023.
+   This Internet-Draft will expire on 27 August 2023.
 
 Copyright Notice
 
@@ -163,6 +163,8 @@ Table of Contents
    credential authority.  If push notifications are required for the use
    case, the implementor can extend the WebDAV intermediary server to
    incorporate push notifications to the sender and receiver devices.
+   Push notifications or similar "notify" operations are not supported
+   out of the box with WebDAV.
 
 4.  Security Considerations
 
