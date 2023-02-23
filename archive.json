@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-02-21T01:04:57.493286+00:00",
+  "timestamp": "2023-02-23T01:00:27.270050+00:00",
   "repo": "dimmyvi/tigress-general-requirements",
   "labels": [
     {
@@ -471,7 +471,7 @@
       "labels": [],
       "body": "After going over the one pagers there were some solutions that would work based on our requirements, but would not work in practice. \r\n\r\n\"Req-Speed\" - This requirement is trying to say that the communication should be fast. If an intermediary server is used we would need some form of push notifications to facilitate fast communication; as opposed to having clients poll.\r\n\r\n\"Req-Invitation\" - We have implied that a link or file is required for the receiver to be able to redeem the credential, but we don't have an actual requirement for this.",
       "createdAt": "2023-02-16T18:52:09Z",
-      "updatedAt": "2023-02-17T23:13:55Z",
+      "updatedAt": "2023-02-21T22:47:01Z",
       "baseRepository": "dimmyvi/tigress-general-requirements",
       "baseRefName": "main",
       "baseRefOid": "a5ecf017b4ff66f247045715f40e166baf54ac19",
@@ -596,8 +596,55 @@
           "createdAt": "2023-02-17T23:13:55Z",
           "updatedAt": "2023-02-17T23:13:55Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOIlUyos5N-ro3",
+          "commit": {
+            "abbreviatedOid": "0f70992"
+          },
+          "author": "dimmyvi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-02-21T22:47:01Z",
+          "updatedAt": "2023-02-21T22:47:01Z",
+          "comments": []
         }
       ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOIlUyos5KeHrg",
+      "title": "Update draft-tigress-webdav-impl.md",
+      "url": "https://github.com/dimmyvi/tigress-general-requirements/pull/6",
+      "state": "OPEN",
+      "author": "castiz",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-02-22T00:30:05Z",
+      "updatedAt": "2023-02-22T00:30:22Z",
+      "baseRepository": "dimmyvi/tigress-general-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "2fd39dfb6f434c21a4d133deb3daabd326783b7a",
+      "headRepository": "dimmyvi/tigress-general-requirements",
+      "headRefName": "castiz-patch-1",
+      "headRefOid": "25ec8aa230becaf584fbb0c39c79346ce3e0f61d",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "castiz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@alexpell00 let me know if you approve of this wording change.",
+          "createdAt": "2023-02-22T00:30:22Z",
+          "updatedAt": "2023-02-22T00:30:22Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
