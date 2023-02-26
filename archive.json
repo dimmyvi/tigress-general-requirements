@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-02-23T01:00:27.270050+00:00",
+  "timestamp": "2023-02-26T01:09:09.766125+00:00",
   "repo": "dimmyvi/tigress-general-requirements",
   "labels": [
     {
@@ -617,24 +617,26 @@
       "id": "PR_kwDOIlUyos5KeHrg",
       "title": "Update draft-tigress-webdav-impl.md",
       "url": "https://github.com/dimmyvi/tigress-general-requirements/pull/6",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "castiz",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2023-02-22T00:30:05Z",
-      "updatedAt": "2023-02-22T00:30:22Z",
+      "updatedAt": "2023-02-23T22:22:34Z",
       "baseRepository": "dimmyvi/tigress-general-requirements",
       "baseRefName": "main",
       "baseRefOid": "2fd39dfb6f434c21a4d133deb3daabd326783b7a",
       "headRepository": "dimmyvi/tigress-general-requirements",
       "headRefName": "castiz-patch-1",
       "headRefOid": "25ec8aa230becaf584fbb0c39c79346ce3e0f61d",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-02-23T22:22:29Z",
+      "mergedAt": "2023-02-23T22:22:29Z",
+      "mergedBy": "castiz",
+      "mergeCommit": {
+        "oid": "5547338ed164a4b65f27a2417d73be767ad2cf55"
+      },
       "comments": [
         {
           "author": "castiz",
